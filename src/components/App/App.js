@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components/macro';
+import Header from '../Header';
+import About from '../About';
+import TheShirt from '../TheShirt';
+import Home from '../Home';
+import TheHoodie from '../TheHoodie';
+import TheBeanie from '../TheBeanie';
+import Footer from '../Footer';
+import { COLORS } from '../../constants';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppWrapper>
+        <Header />
+        <Switch>
+          <Route path='/about'>
+            <About />
+          </Route>
+          <Route path='/the-shirt'>
+            <TheShirt />
+          </Route>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/the-hoodie'>
+            <TheHoodie />
+          </Route>
+          <Route path='/the-beanie'>
+            <TheBeanie />
+          </Route>
+        </Switch>
+        <Footer />
+      </AppWrapper>
+    </Router>
   );
-}
+};
+
+const AppWrapper = styled.div`
+  min-height: 100%;
+  position: relative;
+  background-color: ${COLORS.aliceBlue};
+  display: grid;
+  grid-template-rows: 68px 1fr 68px;
+`;
 
 export default App;
