@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { ChevronDown } from 'react-feather';
+import { COLORS } from '../constants';
 
 const Landing = ({ message }) => {
   const [chevronIsDisplayed, setChevronIsDisplayed] = useState(true);
@@ -49,12 +50,15 @@ const FloatingChevronDown = styled(ChevronDown)`
   @keyframes float {
     0% {
       transform: translateY(0px);
+      color: ${COLORS.eerieBlack};
     }
     50% {
       transform: translateY(-10px);
+      color: ${COLORS.harvestGold};
     }
     100% {
       transform: translateY(0px);
+      color: ${COLORS.eerieBlack};
     }
   }
 `;
