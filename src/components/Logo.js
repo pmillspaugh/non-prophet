@@ -3,16 +3,16 @@ import styled from 'styled-components/macro';
 
 const Logo = () => {
   return (
-    <LogoLink href='/'>
+    <LogoWrapper>
       <LogoImage
         src='../../../assets/logo/logo-harvestGold.png'
         alt='yellow non-prophet logo'
       />
-    </LogoLink>
+    </LogoWrapper>
   );
 };
 
-const LogoLink = styled.a`
+const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 125px;
