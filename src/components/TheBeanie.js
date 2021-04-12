@@ -1,10 +1,13 @@
 import MaxWidthWrapper from './MaxWidthWrapper';
 import Main from './Main';
+import Landing from './Landing';
 
 const TheBeanie = () => {
   return (
     <MaxWidthWrapper>
-      <Main message='The Beanie.' />
+      <Main>
+        <Landing message='The Beanie.' />
+      </Main>
     </MaxWidthWrapper>
   );
 };

@@ -1,10 +1,13 @@
 import MaxWidthWrapper from './MaxWidthWrapper';
 import Main from './Main';
+import Landing from './Landing';
 
 const About = () => {
   return (
     <MaxWidthWrapper>
-      <Main message='About.' />
+      <Main>
+        <Landing message='About.' />
+      </Main>
     </MaxWidthWrapper>
   );
 };
