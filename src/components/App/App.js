@@ -8,6 +8,7 @@ import TheHoodie from '../TheHoodie';
 import TheBeanie from '../TheBeanie';
 import Footer from '../Footer';
 import { COLORS } from '../../constants';
+import NavSideBar from '../NavSideBar';
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           </Route>
         </Switch>
         <Footer />
+        <NavSideBar />
       </AppWrapper>
     </Router>
   );

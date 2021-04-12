@@ -32,6 +32,7 @@ dd {
 /* Piccalilli rule uses – ul[role='list'], ol[role='list'] – but I went with all ul/ol per JC */
 ul, ol {
   list-style: none;
+  padding: 0;
 }
 
 /* Set core root defaults */
