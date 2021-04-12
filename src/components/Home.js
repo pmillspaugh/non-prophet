@@ -4,6 +4,7 @@ import Landing from './Landing';
 import Section from './Section';
 import EJIAnchor from './EJIAnchor';
 import ShopContainer from './ShopContainer';
+import SignUp from './SignUp';
 
 const Home = () => {
   return (
@@ -18,12 +19,7 @@ const Home = () => {
           <h1>Shop.</h1>
           <ShopContainer />
         </Section>
-        <Section>
-          <h1>Keep me posted.</h1>
-          {/* TODO: add form and extract */}
-          <br />
-          <p>Stay tuned for product releases and big announcements.</p>
-        </Section>
+        <SignUp />
       </Main>
     </MaxWidthWrapper>
   );
