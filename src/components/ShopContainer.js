@@ -8,19 +8,19 @@ const ShopContainer = () => {
       <Link to='/the-shirt'>
         <ImageContainer
           source='../../../assets/theShirt/shirt-navy-flat-1.png'
-          product='The Shirt'
+          product='The Shirt.'
         />
       </Link>
       <Link to='/the-hoodie'>
         <ImageContainer
           source='../../../assets/theHoodie/hoodie-navy-flat-3.png'
-          product='The Hoodie'
+          product='The Hoodie.'
         />
       </Link>
       <Link to='/the-beanie'>
         <ImageContainer
           source='../../../assets/theBeanie/beanie-navy-flat-2.png'
-          product='The Beanie'
+          product='The Beanie.'
         />
       </Link>
     </Wrapper>

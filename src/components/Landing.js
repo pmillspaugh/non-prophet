@@ -1,11 +1,28 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { ChevronDown } from 'react-feather';
 
 const Landing = ({ message }) => {
+  const [chevronIsDisplayed, setChevronIsDisplayed] = useState(true);
+
+  const handleScroll = () => {
+    window.scrollY > 36
+      ? setChevronIsDisplayed(false)
+      : setChevronIsDisplayed(true);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <LandingWrapper>
       <h1>{message}</h1>
-      <FloatingChevronDown size={36} />
+      <FloatingChevronDown
+        display={chevronIsDisplayed ? 'block' : 'none'}
+        size={36}
+      />
     </LandingWrapper>
   );
 };
@@ -21,6 +38,7 @@ const LandingWrapper = styled.section`
 
 // TODO: remove chevron on scroll: https://dev.to/caicindy87/change-navbar-style-on-scroll-using-react-and-css-43pc
 const FloatingChevronDown = styled(ChevronDown)`
+  display: ${(p) => p.display};
   position: absolute;
   bottom: -58px;
   left: 0;
