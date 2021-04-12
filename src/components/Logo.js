@@ -1,11 +1,11 @@
 // TODO: add props for different colored logos
 import styled from 'styled-components/macro';
 
-const Logo = () => {
+const Logo = ({ source }) => {
   return (
     <LogoWrapper>
       <LogoImage
-        src='../../../assets/logo/logo-harvestGold.png'
+        src={source}
         alt='yellow non-prophet logo'
       />
     </LogoWrapper>
