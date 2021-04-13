@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
-import Button from './Button';
-import { COLORS } from '../constants';
+import Button from '../Button';
+import { COLORS } from '../../constants';
 
 const SignUp = () => {
   return (

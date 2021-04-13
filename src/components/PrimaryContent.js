@@ -1,11 +1,11 @@
 import styled from 'styled-components/macro';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
-import About from './About';
-import TheShirt from './TheShirt';
-import Home from './Home';
-import TheHoodie from './TheHoodie';
-import TheBeanie from './TheBeanie';
+import About from './About/About';
+import TheShirt from './TheShirt/TheShirt';
+import Home from './Home/Home';
+import TheHoodie from './TheHoodie/TheHoodie';
+import TheBeanie from './TheBeanie/TheBeanie';
 import Footer from './Footer';
 import { COLORS } from '../constants';
 

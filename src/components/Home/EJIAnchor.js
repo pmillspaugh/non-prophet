@@ -1,15 +1,15 @@
 import styled from 'styled-components/macro';
-import { COLORS } from '../constants';
+import { COLORS } from '../../constants';
 import { ArrowRightCircle } from 'react-feather';
 
 const EJIAnchor = () => {
-    return (
-      <EJILink target='_blank' href='https://eji.org/'>
-        <LearnMore>Learn More </LearnMore>
-        <ArrowRightCircle />
-      </EJILink>
-    );
-}
+  return (
+    <EJILink target='_blank' href='https://eji.org/'>
+      <LearnMore>Learn More </LearnMore>
+      <ArrowRightCircle />
+    </EJILink>
+  );
+};
 
 const EJILink = styled.a`
   margin-top: 24px;
