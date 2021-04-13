@@ -6,12 +6,14 @@ import NavSideBar from '../NavSideBar';
 import CartSideBar from '../CartSideBar';
 
 const App = () => {
+  // state variables track the status and styling of mobile navigation menu sidebar and shopping cart sidebar
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [menuTransform, setMenuTransform] = useState('translate(-250px, 0)');
   const [cartIsOpen, setcartIsOpen] = useState(false);
   const [cartTransform, setCartTransform] = useState('translate(250px, 0)');
   const [contentFilter, setContentFilter] = useState('none');
 
+  // Toggles mobile navigation menu sidebar
   const toggleMenuTransform = (menuIsOpen) => {
     if (cartIsOpen) {
       console.log('test');
@@ -28,6 +30,7 @@ const App = () => {
     }
   };
 
+  // Toggles mobile shopping cart sidebar
   //  ! DRY
   const toggleCartTransform = () => {
     if (menuIsOpen) {
