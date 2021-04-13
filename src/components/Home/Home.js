@@ -1,5 +1,5 @@
-import MaxWidthWrapper from '../MaxWidthWrapper';
-import Main from '../Main';
+import MaxWidthWrapper from '../App/MaxWidthWrapper';
+import Main from '../App/Main';
 import Landing from '../Landing';
 import Section from '../Section';
 import EJIAnchor from './EJIAnchor';

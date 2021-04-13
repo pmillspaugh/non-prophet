@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components/macro';
-import PrimaryContent from '../PrimaryContent';
-import NavSideBar from '../NavSideBar';
-import CartSideBar from '../CartSideBar';
+import PrimaryContent from './PrimaryContent';
+import NavSideBar from './NavSideBar';
+import CartSideBar from './CartSideBar';
 
 const App = () => {
   // state variables track the status and styling of mobile navigation menu sidebar and shopping cart sidebar
