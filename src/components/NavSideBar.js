@@ -8,16 +8,24 @@ const NavSideBar = ({ menuTransform, toggleMenuTransform }) => {
   return (
     <Wrapper menuTransform={menuTransform}>
       <XIcon color={COLORS.aliceBlue} size={36} onClick={toggleMenuTransform} />
-      <Link to='/'>
+      <Link to='/' onClick={toggleMenuTransform}>
         <LogoWrapper>
           <Logo source='../../../assets/logo/logo-aliceBlue.png' />
         </LogoWrapper>
       </Link>
       <NavList>
-        <NavSideBarLink to='/about'>About</NavSideBarLink>
-        <NavSideBarLink to='/the-shirt'>The Shirt</NavSideBarLink>
-        <NavSideBarLink to='/the-hoodie'>The Hoodie</NavSideBarLink>
-        <NavSideBarLink to='/the-beanie'>The Beanie</NavSideBarLink>
+        <NavSideBarLink to='/about' onClick={toggleMenuTransform}>
+          About
+        </NavSideBarLink>
+        <NavSideBarLink to='/the-shirt' onClick={toggleMenuTransform}>
+          The Shirt
+        </NavSideBarLink>
+        <NavSideBarLink to='/the-hoodie' onClick={toggleMenuTransform}>
+          The Hoodie
+        </NavSideBarLink>
+        <NavSideBarLink to='/the-beanie' onClick={toggleMenuTransform}>
+          The Beanie
+        </NavSideBarLink>
       </NavList>
     </Wrapper>
   );

@@ -5,7 +5,7 @@ import { ShoppingCart, Menu } from 'react-feather';
 import { COLORS } from '../constants';
 import Logo from './Logo';
 
-const Header = ({ toggleMenuTransform }) => {
+const Header = ({ toggleMenuTransform, toggleCartTransform }) => {
   const [logoSource, setLogoSource] = useState(
     '../../../assets/logo/logo-harvestGold.png'
   );
@@ -34,7 +34,7 @@ const Header = ({ toggleMenuTransform }) => {
         </Link>
         <NavBarLink to='/the-hoodie'>The Hoodie</NavBarLink>
         <NavBarLink to='/the-beanie'>The Beanie</NavBarLink>
-        <IconWrapper href='/'>
+        <IconWrapper href='/' onClick={toggleCartTransform}>
           <ShoppingCart color={COLORS.eerieBlack} />
         </IconWrapper>
       </NavBar>
@@ -42,7 +42,6 @@ const Header = ({ toggleMenuTransform }) => {
   );
 };
 
-// TODO: style header on scroll: https://dev.to/caicindy87/change-navbar-style-on-scroll-using-react-and-css-43pc
 const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;

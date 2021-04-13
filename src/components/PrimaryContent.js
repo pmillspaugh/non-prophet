@@ -9,10 +9,17 @@ import TheBeanie from './TheBeanie';
 import Footer from './Footer';
 import { COLORS } from '../constants';
 
-const PrimaryContent = ({ toggleMenuTransform, contentFilter }) => {
+const PrimaryContent = ({
+  toggleMenuTransform,
+  toggleCartTransform,
+  contentFilter,
+}) => {
   return (
     <Wrapper contentFilter={contentFilter}>
-      <Header toggleMenuTransform={() => toggleMenuTransform()} />
+      <Header
+        toggleMenuTransform={() => toggleMenuTransform()}
+        toggleCartTransform={() => toggleCartTransform()}
+      />
       <Switch>
         <Route path='/about'>
           <About />
