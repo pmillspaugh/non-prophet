@@ -7,19 +7,19 @@ const ShopContainer = () => {
     <Wrapper>
       <Link to='/the-shirt'>
         <ImageContainer
-          source='../../../assets/theShirt/shirt-navy-flat-1.png'
+          source='../../../assets/theShirt/navy/shirt-navy-flat-1.png'
           product='The Shirt.'
         />
       </Link>
       <Link to='/the-hoodie'>
         <ImageContainer
-          source='../../../assets/theHoodie/hoodie-navy-flat-3.png'
+          source='../../../assets/theHoodie/navy/hoodie-navy-flat-1.png'
           product='The Hoodie.'
         />
       </Link>
       <Link to='/the-beanie'>
         <ImageContainer
-          source='../../../assets/theBeanie/beanie-navy-flat-2.png'
+          source='../../../assets/theBeanie/navy/beanie-navy-flat-1.png'
           product='The Beanie.'
         />
       </Link>
