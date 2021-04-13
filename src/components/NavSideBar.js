@@ -1,13 +1,13 @@
-// TODO: move to a portal or isolate to create new stacking context?
-
 import styled from 'styled-components/macro';
 import Logo from './Logo';
 import { NavLink, Link } from 'react-router-dom';
+import { X } from 'react-feather';
 import { COLORS } from '../constants';
 
-const NavSideBar = () => {
+const NavSideBar = ({ menuTransform, toggleMenuTransform }) => {
   return (
-    <Wrapper>
+    <Wrapper menuTransform={menuTransform}>
+      <XIcon color={COLORS.aliceBlue} size={36} onClick={toggleMenuTransform} />
       <Link to='/'>
         <LogoWrapper>
           <Logo source='../../../assets/logo/logo-aliceBlue.png' />
@@ -24,15 +24,19 @@ const NavSideBar = () => {
 };
 
 const Wrapper = styled.div`
-  display: none; // TODO: toggle display on click
-  position: absolute;
-  z-index: 2; // TODO: move to portal or isolate to avoid z-index wars
+  transform: ${(p) => p.menuTransform};
+  transition: 1s transform;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   height: 100vh;
   width: 250px;
   background-color: ${COLORS.eerieBlack};
 `;
 
 const LogoWrapper = styled.div`
+  margin-top: 60px;
   height: 68px;
   display: flex;
   justify-content: center;
@@ -50,6 +54,12 @@ const NavList = styled.ul`
 const NavSideBarLink = styled(NavLink)`
   color: ${COLORS.aliceBlue};
   text-decoration: none;
+`;
+
+const XIcon = styled(X)`
+  position: absolute;
+  top: 12px;
+  right: 12px;
 `;
 
 export default NavSideBar;

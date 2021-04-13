@@ -5,7 +5,7 @@ import { ShoppingCart, Menu } from 'react-feather';
 import { COLORS } from '../constants';
 import Logo from './Logo';
 
-const Header = () => {
+const Header = ({ toggleMenuTransform }) => {
   const [logoSource, setLogoSource] = useState(
     '../../../assets/logo/logo-harvestGold.png'
   );
@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <NavBar>
-        <IconWrapper href='/'>
+        <IconWrapper href='/' onClick={toggleMenuTransform}>
           <Menu color={COLORS.eerieBlack} />
         </IconWrapper>
         <NavBarLink to='/about'>About</NavBarLink>

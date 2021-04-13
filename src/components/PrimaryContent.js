@@ -1,0 +1,46 @@
+import styled from 'styled-components/macro';
+import { Route, Switch } from 'react-router-dom';
+import Header from './Header';
+import About from './About';
+import TheShirt from './TheShirt';
+import Home from './Home';
+import TheHoodie from './TheHoodie';
+import TheBeanie from './TheBeanie';
+import Footer from './Footer';
+import { COLORS } from '../constants';
+
+const PrimaryContent = ({ toggleMenuTransform, contentFilter }) => {
+  return (
+    <Wrapper contentFilter={contentFilter}>
+      <Header toggleMenuTransform={() => toggleMenuTransform()} />
+      <Switch>
+        <Route path='/about'>
+          <About />
+        </Route>
+        <Route path='/the-shirt'>
+          <TheShirt />
+        </Route>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route path='/the-hoodie'>
+          <TheHoodie />
+        </Route>
+        <Route path='/the-beanie'>
+          <TheBeanie />
+        </Route>
+      </Switch>
+      <Footer />
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.div`
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: 68px 1fr 68px;
+  background-color: ${COLORS.aliceBlue};
+  filter: ${(p) => p.contentFilter};
+`;
+
+export default PrimaryContent;
