@@ -12,12 +12,17 @@ const App = () => {
   const [cartTransform, setCartTransform] = useState('translate(250px, 0)');
   const [contentFilter, setContentFilter] = useState('none');
 
-  const toggleMenuTransform = () => {
-    setMenuIsOpen(!menuIsOpen);
-    if (menuIsOpen) {
+  const toggleMenuTransform = (menuIsOpen) => {
+    if (cartIsOpen) {
+      console.log('test');
+      return;
+    }
+    if (!menuIsOpen) {
+      setMenuIsOpen(true);
       setMenuTransform('translate(0, 0)');
       setContentFilter('blur(4px)');
     } else {
+      setMenuIsOpen(false);
       setMenuTransform('translate(-250px, 0)');
       setContentFilter('none');
     }
@@ -25,11 +30,16 @@ const App = () => {
 
   //  ! DRY
   const toggleCartTransform = () => {
-    setcartIsOpen(!cartIsOpen);
-    if (cartIsOpen) {
+    if (menuIsOpen) {
+      console.log('test');
+      return;
+    }
+    if (!cartIsOpen) {
+      setcartIsOpen(true);
       setCartTransform('translate(0, 0)');
       setContentFilter('blur(4px)');
     } else {
+      setcartIsOpen(false);
       setCartTransform('translate(250px, 0)');
       setContentFilter('none');
     }
