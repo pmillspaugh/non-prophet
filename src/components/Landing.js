@@ -30,7 +30,8 @@ const Landing = ({ message }) => {
 
 const LandingWrapper = styled.section`
   position: relative;
-  height: calc(100vh - 136px);
+  height: calc(100vh - 68px);
+  padding-bottom: 68px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +42,7 @@ const LandingWrapper = styled.section`
 const FloatingChevronDown = styled(ChevronDown)`
   display: ${(p) => p.display};
   position: absolute;
-  bottom: -58px;
+  bottom: 8px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -53,7 +54,7 @@ const FloatingChevronDown = styled(ChevronDown)`
       color: ${COLORS.eerieBlack};
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       color: ${COLORS.harvestGold};
     }
     100% {
