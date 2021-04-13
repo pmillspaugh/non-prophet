@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import Button from '../Button';
+import { PrimaryButton } from '../Buttons';
 import { COLORS } from '../../constants';
 
 const SignUp = () => {
@@ -10,7 +10,7 @@ const SignUp = () => {
       <SignUpForm>
         <UserEntry type='text' placeholder='Name' />
         <UserEntry type='text' placeholder='Email' />
-        <Button type='submit'>Count me in.</Button>
+        <PrimaryButton type='submit'>Count me in.</PrimaryButton>
       </SignUpForm>
     </Wrapper>
   );
