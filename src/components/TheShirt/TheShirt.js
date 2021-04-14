@@ -31,12 +31,22 @@ const shirtImageCollection = {
   ],
 };
 
+// TODO: move to Firestore
+const shirtDetails = {
+  details: 'Embroidered non-prophet logo. 100% soft, durable cotton. Unisex.',
+  sizeAndFit: 'Pre-shrunk. Regular fit.',
+  shipping: 'Printed & shipped upon order. Should take 1-2 weeks to arrive.',
+};
+
 const TheShirt = () => {
   return (
     <MaxWidthWrapper>
       <Main>
         <Landing message='The Shirt.' />
-        <ProductDisplay imageCollection={shirtImageCollection} />
+        <ProductDisplay
+          imageCollection={shirtImageCollection}
+          details={shirtDetails}
+        />
       </Main>
     </MaxWidthWrapper>
   );

@@ -6,6 +6,15 @@ import { COLORS } from '../../constants';
 const Carousel = ({ imageCollection, selectedColor }) => {
   const [selectedImage, setSelectedImage] = useState(0);
 
+  const handleLeftChevronClick = () => {
+    if (selectedImage > 0) setSelectedImage(selectedImage - 1);
+  };
+
+  const handleRightChevronClick = () => {
+    if (selectedImage < imageCollection[selectedColor].length - 1)
+      setSelectedImage(selectedImage + 1);
+  };
+
   return (
     <Wrapper>
       <ImageWrapper>
@@ -22,8 +31,8 @@ const Carousel = ({ imageCollection, selectedColor }) => {
           />
         ))}
       </ToggleWrapper>
-      <LeftChevron size={36} />
-      <RightChevron size={36} />
+      <LeftChevron size={44} onClick={handleLeftChevronClick} />
+      <RightChevron size={44} onClick={handleRightChevronClick} />
     </Wrapper>
   );
 };
@@ -43,7 +52,7 @@ const ImageWrapper = styled.div`
 
 const ProductImage = styled.img`
   transform: translate(${(p) => `${p.index * -100}%`}, 0);
-  transition: 2s transform;
+  transition: 1s transform;
 `;
 
 const ToggleWrapper = styled.div`
@@ -63,6 +72,8 @@ const ToggleDot = styled.div`
 
   &:hover {
     cursor: pointer;
+    width: 12px;
+    height: 12px;
     background-color: ${COLORS.gainsboro};
   }
 `;
@@ -70,14 +81,30 @@ const ToggleDot = styled.div`
 // TODO: change image on click, enlarge on hover
 const LeftChevron = styled(ChevronLeft)`
   position: absolute;
-  top: calc(50% - 36px);
-  left: 0;
+  top: calc(50% - 44px);
+  left: 16px;
+  color: ${COLORS.gainsboro};
+
+  &:hover {
+    cursor: pointer;
+    color: ${COLORS.harvestGold};
+    transform: scale(1.25);
+    transition: 1s transform;
+  }
 `;
 
 const RightChevron = styled(ChevronRight)`
   position: absolute;
-  top: calc(50% - 36px);
-  right: 0;
+  top: calc(50% - 44px);
+  right: 16px;
+  color: ${COLORS.gainsboro};
+
+  &:hover {
+    cursor: pointer;
+    color: ${COLORS.harvestGold};
+    transform: scale(1.25);
+    transition: 1s transform;
+  }
 `;
 
 export default Carousel;

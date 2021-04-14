@@ -7,7 +7,7 @@ import ChooseSize from '../product/ChooseSize';
 import AddToCartButton from '../product/AddToCartButton';
 import Details from '../product/Details';
 
-const ProductDisplay = ({ imageCollection }) => {
+const ProductDisplay = ({ imageCollection, details }) => {
   // state to manage color and size selection
   const [selectedColor, setSelectedColor] = useState('navy');
   const [selectedSize, setSelectedSize] = useState('');
@@ -39,7 +39,7 @@ const ProductDisplay = ({ imageCollection }) => {
           selectedSize={selectedSize}
         />
         <AddToCartButton>Add to cart</AddToCartButton>
-        <Details />
+        <Details details={details} />
       </OptionsWrapper>
     </ProductDisplayWrapper>
   );

@@ -1,23 +1,20 @@
 import styled from 'styled-components/macro';
-import { COLORS } from '../../constants';
+import { COLORS, WEIGHTS } from '../../constants';
 
-const Details = () => {
+const Details = ({ details }) => {
   return (
     <Wrapper>
       <DetailSelection>
         <Summary>Details</Summary>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nisi
-        arcu, vehicula ac faucibus vel, cursus id diam.
+        {details.details}
       </DetailSelection>
       <DetailSelection>
         <Summary>Size and fit</Summary>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nisi
-        arcu, vehicula ac faucibus vel, cursus id diam.
+        {details.sizeAndFit}
       </DetailSelection>
       <DetailSelection>
         <Summary>Shipping</Summary>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nisi
-        arcu, vehicula ac faucibus vel, cursus id diam.
+        {details.shipping}
       </DetailSelection>
     </Wrapper>
   );
@@ -26,6 +23,8 @@ const Details = () => {
 const Wrapper = styled.div``;
 
 const DetailSelection = styled.details`
+  font-weight: ${WEIGHTS[300]};
+
   &:hover {
     cursor: pointer;
     color: ${COLORS.harvestGold};
@@ -33,6 +32,7 @@ const DetailSelection = styled.details`
 `;
 
 const Summary = styled.summary`
+  font-weight: ${WEIGHTS[400]};
   &:focus {
     outline: none;
   }
