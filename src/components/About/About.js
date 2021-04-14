@@ -16,7 +16,7 @@ const About = () => {
           </h1>
           <p>
             All profits are donated to the{' '}
-            <ExternalLink href='https://eji.org/'>
+            <ExternalLink href='https://eji.org/' target='_blank'>
               Equal Justice Initiative
             </ExternalLink>
             .
@@ -27,7 +27,10 @@ const About = () => {
           </p>
           <p>
             If you have any feedback, let me know on{' '}
-            <ExternalLink href='https://twitter.com/pete_millspaugh'>
+            <ExternalLink
+              href='https://twitter.com/pete_millspaugh'
+              target='_blank'
+            >
               Twitter
             </ExternalLink>
             . Thank you for your support!
