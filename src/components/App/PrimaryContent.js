@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import ScrollToTop from './ScrollToTop';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import About from '../About/About';
@@ -20,6 +21,7 @@ const PrimaryContent = ({
         toggleMenuTransform={() => toggleMenuTransform()}
         toggleCartTransform={() => toggleCartTransform()}
       />
+      <ScrollToTop />
       <Switch>
         <Route path='/about'>
           <About />
