@@ -43,7 +43,6 @@ const Carousel = ({ imageCollection, selectedColor }) => {
 
 const Wrapper = styled.div`
   max-width: 496px;
-  max-height: 496px;
   position: relative;
 `;
 
@@ -56,6 +55,7 @@ const ImageWrapper = styled.div`
 `;
 
 const ProductImage = styled.img`
+  height: auto;
   transform: translate(${(p) => `${p.index * -100}%`}, 0);
   transition: 1s transform;
 `;
