@@ -55,7 +55,6 @@ const ImageWrapper = styled.div`
 `;
 
 const ProductImage = styled.img`
-  height: auto;
   transform: translate(${(p) => `${p.index * -100}%`}, 0);
   transition: 1s transform;
 `;

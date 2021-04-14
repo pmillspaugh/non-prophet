@@ -62,7 +62,6 @@ const ProductDisplay = ({
 };
 
 const ProductDisplayWrapper = styled.section`
-  min-height: calc(100vh - 136px);
   display: flex;
   flex-direction: column;
   justify-content: center;
