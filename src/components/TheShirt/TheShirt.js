@@ -31,7 +31,14 @@ const shirtImageCollection = {
   ],
 };
 
-// TODO: move to Firestore
+const shirtColorChoices = {
+  navy: '../../../assets/theShirt/navy/shirt-navy-flat-1.png',
+  black: '../../../assets/theShirt/black/shirt-black-flat-1.png',
+  white: '../../../assets/theShirt/white/shirt-white-flat-1.png',
+};
+
+const shirtSizeChoices = ['S', 'M', 'L', 'XL', 'XXL'];
+
 const shirtDetails = {
   details: 'Embroidered non-prophet logo. 100% soft, durable cotton. Unisex.',
   sizeAndFit: 'Pre-shrunk. Regular fit.',
@@ -45,6 +52,10 @@ const TheShirt = () => {
         <Landing message='The Shirt.' />
         <ProductDisplay
           imageCollection={shirtImageCollection}
+          product='The Shirt.'
+          price='$25'
+          colorChoices={shirtColorChoices}
+          sizeChoices={shirtSizeChoices}
           details={shirtDetails}
         />
       </Main>

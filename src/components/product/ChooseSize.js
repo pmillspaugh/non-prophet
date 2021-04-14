@@ -1,35 +1,23 @@
 import styled from 'styled-components/macro';
 import SizeButton from './SizeButton';
 
-const ChooseSize = ({ selectedSize, handleSizeButtonClick }) => {
+const ChooseSize = ({
+  product,
+  sizeChoices,
+  selectedSize,
+  handleSizeButtonClick,
+}) => {
+  if (product === 'The Beanie.') return <></>;
   return (
     <Wrapper>
       <h4>Size: </h4>
-      <SizeButton
-        sizeOption='S'
-        selectedSize={selectedSize}
-        handleSizeButtonClick={handleSizeButtonClick}
-      />
-      <SizeButton
-        sizeOption='M'
-        selectedSize={selectedSize}
-        handleSizeButtonClick={handleSizeButtonClick}
-      />
-      <SizeButton
-        sizeOption='L'
-        selectedSize={selectedSize}
-        handleSizeButtonClick={handleSizeButtonClick}
-      />
-      <SizeButton
-        sizeOption='XL'
-        selectedSize={selectedSize}
-        handleSizeButtonClick={handleSizeButtonClick}
-      />
-      <SizeButton
-        sizeOption='XXL'
-        selectedSize={selectedSize}
-        handleSizeButtonClick={handleSizeButtonClick}
-      />
+      {sizeChoices.map((size) => (
+        <SizeButton
+          sizeOption={size}
+          selectedSize={selectedSize}
+          handleSizeButtonClick={handleSizeButtonClick}
+        />
+      ))}
     </Wrapper>
   );
 };

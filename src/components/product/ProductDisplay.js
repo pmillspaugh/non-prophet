@@ -7,7 +7,14 @@ import ChooseSize from '../product/ChooseSize';
 import AddToCartButton from '../product/AddToCartButton';
 import Details from '../product/Details';
 
-const ProductDisplay = ({ imageCollection, details }) => {
+const ProductDisplay = ({
+  imageCollection,
+  colorChoices,
+  sizeChoices,
+  product,
+  price,
+  details,
+}) => {
   // state to manage color and size selection
   const [selectedColor, setSelectedColor] = useState('navy');
   const [selectedSize, setSelectedSize] = useState('');
@@ -21,6 +28,7 @@ const ProductDisplay = ({ imageCollection, details }) => {
   const handleSizeButtonClick = (sizeOption) => {
     setSelectedSize(sizeOption);
   };
+  console.log('colorChoices', colorChoices);
 
   return (
     <ProductDisplayWrapper>
@@ -29,12 +37,15 @@ const ProductDisplay = ({ imageCollection, details }) => {
         selectedColor={selectedColor}
       />
       <OptionsWrapper>
-        <Description />
+        <Description product={product} price={price} />
         <ChooseColor
+          colorChoices={colorChoices}
           handleColorButtonClick={handleColorButtonClick}
           selectedColor={selectedColor}
         />
         <ChooseSize
+          product={product}
+          sizeChoices={sizeChoices}
           handleSizeButtonClick={handleSizeButtonClick}
           selectedSize={selectedSize}
         />
