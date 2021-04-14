@@ -42,11 +42,13 @@ const Carousel = ({ imageCollection, selectedColor }) => {
 };
 
 const Wrapper = styled.div`
+  object-fit: contain;
   max-width: 496px;
   position: relative;
 `;
 
 const ImageWrapper = styled.div`
+  object-fit: contain;
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
