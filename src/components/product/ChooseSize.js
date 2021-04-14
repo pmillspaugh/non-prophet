@@ -1,26 +1,39 @@
 import styled from 'styled-components/macro';
-import { COLORS } from '../../constants';
+import SizeButton from './SizeButton';
 
-const ChooseSize = () => {
+const ChooseSize = ({ selectedSize, handleSizeButtonClick }) => {
   return (
-    <div>
+    <Wrapper>
       <h4>Size: </h4>
-      <ProductSizeButton>S</ProductSizeButton>
-      <ProductSizeButton>M</ProductSizeButton>
-      <ProductSizeButton>L</ProductSizeButton>
-      <ProductSizeButton>XL</ProductSizeButton>
-      <ProductSizeButton>XXL</ProductSizeButton>
-    </div>
+      <SizeButton
+        sizeOption='S'
+        selectedSize={selectedSize}
+        handleSizeButtonClick={handleSizeButtonClick}
+      />
+      <SizeButton
+        sizeOption='M'
+        selectedSize={selectedSize}
+        handleSizeButtonClick={handleSizeButtonClick}
+      />
+      <SizeButton
+        sizeOption='L'
+        selectedSize={selectedSize}
+        handleSizeButtonClick={handleSizeButtonClick}
+      />
+      <SizeButton
+        sizeOption='XL'
+        selectedSize={selectedSize}
+        handleSizeButtonClick={handleSizeButtonClick}
+      />
+      <SizeButton
+        sizeOption='XXL'
+        selectedSize={selectedSize}
+        handleSizeButtonClick={handleSizeButtonClick}
+      />
+    </Wrapper>
   );
 };
 
-const ProductSizeButton = styled.button`
-  width: 44px;
-  height: 44px;
-  margin-right: 12px;
-  background: ${COLORS.gainsboro};
-  border: 1px solid ${COLORS.eerieBlack};
-  border-radius: 3px;
-`;
+const Wrapper = styled.div``;
 
 export default ChooseSize;

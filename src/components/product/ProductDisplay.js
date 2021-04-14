@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components/macro';
 import Carousel from '../product/Carousel';
 import Description from '../product/Description';
@@ -7,14 +8,39 @@ import AddToCartButton from '../product/AddToCartButton';
 import Details from '../product/Details';
 
 const ProductDisplay = ({ imageCollection }) => {
+  // state to manage color and size selection
+  const [selectedColor, setSelectedColor] = useState('navy');
+  const [selectedSize, setSelectedSize] = useState('');
+
+  // toggles image collection for display in Carousel
+  const handleColorButtonClick = (buttonColor) => {
+    setSelectedColor(buttonColor);
+  };
+
+  // toggles size selected
+  const handleSizeButtonClick = (sizeOption) => {
+    setSelectedSize(sizeOption);
+  };
+
   return (
     <ProductDisplayWrapper>
-      <Carousel imageCollection={imageCollection} />
-      <Description />
-      <ChooseColor />
-      <ChooseSize />
-      <AddToCartButton>Add to cart</AddToCartButton>
-      <Details />
+      <Carousel
+        imageCollection={imageCollection}
+        selectedColor={selectedColor}
+      />
+      <OptionsWrapper>
+        <Description />
+        <ChooseColor
+          handleColorButtonClick={handleColorButtonClick}
+          selectedColor={selectedColor}
+        />
+        <ChooseSize
+          handleSizeButtonClick={handleSizeButtonClick}
+          selectedSize={selectedSize}
+        />
+        <AddToCartButton>Add to cart</AddToCartButton>
+        <Details />
+      </OptionsWrapper>
     </ProductDisplayWrapper>
   );
 };
@@ -27,6 +53,25 @@ const ProductDisplayWrapper = styled.section`
   align-items: flex-start;
   gap: 16px;
   margin-bottom: 36px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 36px;
+  }
+`;
+
+const OptionsWrapper = styled.div`
+  width: 100%;
+  min-width: 268px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+
+  @media (min-width: 1200px) {
+    max-width: 268px;
+  }
 `;
 
 export default ProductDisplay;
