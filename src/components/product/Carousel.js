@@ -42,13 +42,34 @@ const Carousel = ({ imageCollection, selectedColor }) => {
 };
 
 const Wrapper = styled.div`
-  object-fit: contain;
-  max-width: 496px;
+  width: calc(100vw - 48px);
+  height: calc(100vw - 48px);
   position: relative;
+  flex-shrink: 0;
+
+  @media (min-width: 576px) {
+    width: 500px;
+    height: 500px;
+  }
+  @media (min-width: 768px) {
+    width: 342px;
+    height: 342px;
+  }
+  @media (min-width: 992px) {
+    width: 492px;
+    height: 492px;
+  }
+  @media (min-width: 1200px) {
+    width: 600px;
+    height: 600px;
+  }
+  @media (min-width: 1400px) {
+    width: 700px;
+    height: 700px;
+  }
 `;
 
 const ImageWrapper = styled.div`
-  object-fit: contain;
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
