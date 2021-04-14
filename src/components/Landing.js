@@ -4,7 +4,9 @@ import { ChevronDown } from 'react-feather';
 import { COLORS } from '../constants';
 
 const Landing = ({ message }) => {
-  const [chevronIsDisplayed, setChevronIsDisplayed] = useState(true);
+  const [chevronIsDisplayed, setChevronIsDisplayed] = useState(
+    window.scrollY === 0
+  );
 
   const handleScroll = () => {
     window.scrollY > 36
