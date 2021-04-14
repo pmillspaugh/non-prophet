@@ -28,7 +28,6 @@ const ProductDisplay = ({
   const handleSizeButtonClick = (sizeOption) => {
     setSelectedSize(sizeOption);
   };
-  console.log('colorChoices', colorChoices);
 
   return (
     <ProductDisplayWrapper>

@@ -6,7 +6,6 @@ const ChooseColor = ({
   handleColorButtonClick,
   selectedColor,
 }) => {
-  console.log('colorChoices', colorChoices);
   return (
     <Wrapper>
       <h4>Color: </h4>
