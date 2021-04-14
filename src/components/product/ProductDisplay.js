@@ -62,15 +62,16 @@ const ProductDisplay = ({
 };
 
 const ProductDisplayWrapper = styled.section`
+  min-height: calc(100vh - 136px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 36px;
+  margin: auto 0;
 
   @media (min-width: 768px) {
     flex-direction: row;
-    gap: 36px;
+    margin-bottom: 0;
   }
 `;
 
@@ -82,6 +83,9 @@ const OptionsWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
 
+  @media (min-width: 768px) {
+    margin-left: 24px;
+  }
   @media (min-width: 1200px) {
     max-width: 268px;
   }

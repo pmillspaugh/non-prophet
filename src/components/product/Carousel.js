@@ -55,6 +55,7 @@ const ImageWrapper = styled.div`
 `;
 
 const ProductImage = styled.img`
+  object-fit: contain;
   transform: translate(${(p) => `${p.index * -100}%`}, 0);
   transition: 1s transform;
 `;

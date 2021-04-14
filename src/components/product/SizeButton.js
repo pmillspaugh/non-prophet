@@ -14,9 +14,10 @@ const SizeButton = ({ sizeOption, selectedSize, handleSizeButtonClick }) => {
 };
 
 const Button = styled.button`
+  padding: 0;
+  margin-right: 12px;
   width: 44px;
   height: 44px;
-  margin-right: 12px;
   background: ${COLORS.gainsboro};
   border: 1px solid
     ${(p) =>
@@ -25,7 +26,7 @@ const Button = styled.button`
   color: ${(p) =>
     p.selectedSize === p.sizeOption ? COLORS.harvestGold : COLORS.eerieBlack};
 
-  &:last-child {
+  &:last-of-type {
     margin-right: 0;
   }
 

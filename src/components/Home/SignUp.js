@@ -38,6 +38,7 @@ const SignUpForm = styled.form`
 `;
 
 const UserEntry = styled.input`
+  padding-top: 4px;
   display: block;
   text-align: center;
   border: 1px solid ${COLORS.harvestGold};

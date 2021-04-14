@@ -15,21 +15,21 @@ const About = () => {
             <NonProphet>non-prophet</NonProphet> is a <em>not-for-profit</em>{' '}
             venture.
           </h1>
-          <Spacer size='16px' />
-          <p>
+          <Spacer size='36px' />
+          <BodyText>
             All profits are donated to the{' '}
             <ExternalLink href='https://eji.org/' target='_blank'>
               Equal Justice Initiative
             </ExternalLink>
             .
-          </p>
+          </BodyText>
           <Spacer size='16px' />
-          <p>
-            The site is a work-in progress right now, so you won't be able to
+          <BodyText>
+            The site is a work in progress right now, so you won't be able to
             add items to your cart, sign up, or checkout just yet.
-          </p>
+          </BodyText>
           <Spacer size='16px' />
-          <p>
+          <BodyText>
             If you have any feedback, let me know on{' '}
             <ExternalLink
               href='https://twitter.com/pete_millspaugh'
@@ -38,7 +38,7 @@ const About = () => {
               Twitter
             </ExternalLink>
             . Thank you for your support!
-          </p>
+          </BodyText>
         </AboutSection>
       </Main>
     </MaxWidthWrapper>
@@ -57,6 +57,16 @@ const AboutSection = styled.section`
 const NonProphet = styled.span`
   color: ${COLORS.harvestGold};
   font-weight: ${WEIGHTS[600]};
+`;
+
+const BodyText = styled.p`
+  align-self: flex-start;
+  text-align: left;
+
+  @media (min-width: 992px) {
+    align-self: revert;
+    text-align: revert;
+  }
 `;
 
 const ExternalLink = styled.a`

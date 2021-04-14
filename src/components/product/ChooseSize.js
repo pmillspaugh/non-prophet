@@ -11,7 +11,7 @@ const ChooseSize = ({
   return (
     <Wrapper>
       <h4>Size: </h4>
-      {sizeChoices.map((size) => (
+      {sizeChoices.map((size, index) => (
         <SizeButton
           sizeOption={size}
           selectedSize={selectedSize}
