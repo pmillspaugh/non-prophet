@@ -13,6 +13,8 @@ const ScrollToTop = ({ history }) => {
       window.scrollTo(0, 0);
     });
     return () => unlisten();
+    // ? Ignore ESLint rule
+    // eslint-disable-next-line
   }, []);
   return null;
 };
