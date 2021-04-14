@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components/macro';
+import Spacer from '../Spacer';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 import { COLORS } from '../../constants';
 
@@ -24,11 +25,14 @@ const Carousel = ({ imageCollection, selectedColor }) => {
       </ImageWrapper>
       <ToggleWrapper>
         {imageCollection[selectedColor].map((source, index) => (
-          <ToggleDot
-            index={index}
-            selectedImage={selectedImage}
-            onClick={() => setSelectedImage(index)}
-          />
+          <>
+            <ToggleDot
+              index={index}
+              selectedImage={selectedImage}
+              onClick={() => setSelectedImage(index)}
+            />
+            <Spacer size='4px' />
+          </>
         ))}
       </ToggleWrapper>
       <LeftChevron size={44} onClick={handleLeftChevronClick} />
@@ -39,6 +43,7 @@ const Carousel = ({ imageCollection, selectedColor }) => {
 
 const Wrapper = styled.div`
   max-width: 496px;
+  max-height: 496px;
   position: relative;
 `;
 
@@ -59,7 +64,6 @@ const ToggleWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
   padding: 16px 0;
 `;
 

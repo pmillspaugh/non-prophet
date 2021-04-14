@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import Logo from './Logo';
 import { NavLink, Link } from 'react-router-dom';
 import { X } from 'react-feather';
+import Spacer from '../Spacer';
 import { COLORS } from '../../constants';
 
 const NavSideBar = ({ menuTransform, toggleMenuTransform }) => {
@@ -17,12 +18,15 @@ const NavSideBar = ({ menuTransform, toggleMenuTransform }) => {
         <NavSideBarLink to='/about' onClick={toggleMenuTransform}>
           About
         </NavSideBarLink>
+        <Spacer size='16px' />
         <NavSideBarLink to='/the-shirt' onClick={toggleMenuTransform}>
           The Shirt
         </NavSideBarLink>
+        <Spacer size='16px' />
         <NavSideBarLink to='/the-hoodie' onClick={toggleMenuTransform}>
           The Hoodie
         </NavSideBarLink>
+        <Spacer size='16px' />
         <NavSideBarLink to='/the-beanie' onClick={toggleMenuTransform}>
           The Beanie
         </NavSideBarLink>
@@ -56,7 +60,6 @@ const NavList = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
 `;
 
 const NavSideBarLink = styled(NavLink)`

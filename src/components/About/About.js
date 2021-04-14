@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import MaxWidthWrapper from '../App/MaxWidthWrapper';
 import Main from '../App/Main';
 import Landing from '../Landing';
+import Spacer from '../Spacer';
 import { COLORS, WEIGHTS } from '../../constants';
 
 const About = () => {
@@ -14,6 +15,7 @@ const About = () => {
             <NonProphet>non-prophet</NonProphet> is a <em>not-for-profit</em>{' '}
             venture.
           </h1>
+          <Spacer size='16px' />
           <p>
             All profits are donated to the{' '}
             <ExternalLink href='https://eji.org/' target='_blank'>
@@ -21,10 +23,12 @@ const About = () => {
             </ExternalLink>
             .
           </p>
+          <Spacer size='16px' />
           <p>
             The site is a work-in progress right now, so you won't be able to
             add items to your cart, sign up, or checkout just yet.
           </p>
+          <Spacer size='16px' />
           <p>
             If you have any feedback, let me know on{' '}
             <ExternalLink
@@ -47,7 +51,6 @@ const AboutSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
   text-align: center;
 `;
 

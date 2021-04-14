@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components/macro';
+import Spacer from '../Spacer';
 import Carousel from '../product/Carousel';
 import Description from '../product/Description';
 import ChooseColor from '../product/ChooseColor';
@@ -35,20 +36,25 @@ const ProductDisplay = ({
         imageCollection={imageCollection}
         selectedColor={selectedColor}
       />
+      <Spacer size='16px' />
       <OptionsWrapper>
         <Description product={product} price={price} />
+        <Spacer size='16px' />
         <ChooseColor
           colorChoices={colorChoices}
           handleColorButtonClick={handleColorButtonClick}
           selectedColor={selectedColor}
         />
+        <Spacer size='16px' />
         <ChooseSize
           product={product}
           sizeChoices={sizeChoices}
           handleSizeButtonClick={handleSizeButtonClick}
           selectedSize={selectedSize}
         />
+        <Spacer size='16px' />
         <AddToCartButton>Add to cart.</AddToCartButton>
+        <Spacer size='16px' />
         <Details details={details} />
       </OptionsWrapper>
     </ProductDisplayWrapper>
@@ -61,7 +67,6 @@ const ProductDisplayWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 16px;
   margin-bottom: 36px;
 
   @media (min-width: 768px) {
@@ -77,7 +82,6 @@ const OptionsWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 16px;
 
   @media (min-width: 1200px) {
     max-width: 268px;

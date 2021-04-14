@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import ImageContainer from './ImageContainer';
+import Spacer from '../Spacer';
 
 const ShopContainer = () => {
   return (
@@ -11,12 +12,14 @@ const ShopContainer = () => {
           product='The Shirt.'
         />
       </Link>
+      <Spacer size='24px' />
       <Link to='/the-hoodie'>
         <ImageContainer
           source='../../../assets/theHoodie/navy/hoodie-navy-flat-1.png'
           product='The Hoodie.'
         />
       </Link>
+      <Spacer size='24px' />
       <Link to='/the-beanie'>
         <ImageContainer
           source='../../../assets/theBeanie/navy/beanie-navy-flat-1.png'
@@ -30,7 +33,6 @@ const ShopContainer = () => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
   margin: 24px 0;
 
   @media (min-width: 1200px) {
