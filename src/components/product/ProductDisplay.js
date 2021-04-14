@@ -48,7 +48,7 @@ const ProductDisplay = ({
           handleSizeButtonClick={handleSizeButtonClick}
           selectedSize={selectedSize}
         />
-        <AddToCartButton>Add to cart</AddToCartButton>
+        <AddToCartButton>Add to cart.</AddToCartButton>
         <Details details={details} />
       </OptionsWrapper>
     </ProductDisplayWrapper>
