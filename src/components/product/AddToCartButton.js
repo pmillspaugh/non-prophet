@@ -5,6 +5,9 @@ const AddToCartButton = styled(PrimaryButton)`
   width: 100%;
   margin: 12px 0;
 
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default AddToCartButton;
