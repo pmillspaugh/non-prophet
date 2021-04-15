@@ -42,9 +42,17 @@ const Carousel = ({ imageCollection, selectedColor }) => {
 };
 
 const Wrapper = styled.div`
+  position: relative;
+`;
+
+const ImageWrapper = styled.div`
   width: calc(100vw - 48px);
   height: calc(100vw - 48px);
-  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-color: ${COLORS.aliceBlue};
+  box-shadow: 0 0 24px ${COLORS.gainsboro};
   flex-shrink: 0;
 
   @media (min-width: 576px) {
@@ -67,14 +75,6 @@ const Wrapper = styled.div`
     width: 700px;
     height: 700px;
   }
-`;
-
-const ImageWrapper = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  background-color: ${COLORS.aliceBlue};
-  box-shadow: 0 0 24px ${COLORS.gainsboro};
 `;
 
 const ProductImage = styled.img`

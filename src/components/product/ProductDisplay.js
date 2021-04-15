@@ -67,7 +67,7 @@ const ProductDisplayWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: auto 0;
+  margin-bottom: 48px;
 
   @media (min-width: 768px) {
     flex-direction: row;
