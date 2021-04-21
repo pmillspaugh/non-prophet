@@ -7,24 +7,44 @@ const Landing = ({ message }) => {
   const [chevronIsDisplayed, setChevronIsDisplayed] = useState(
     window.scrollY === 0
   );
+  const [landingMessage, setLandingMessage] = useState('');
 
+  // display message one character at a time to create typing effect
+  useEffect(() => {
+    const currentLength = landingMessage.length;
+    setTimeout(
+      () => setLandingMessage(message.substring(0, currentLength + 1)),
+      75
+    );
+  });
+
+  // listen for scroll event
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // hide chevron on scroll
   const handleScroll = () => {
     window.scrollY > 36
       ? setChevronIsDisplayed(false)
       : setChevronIsDisplayed(true);
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // scroll down one page on chevron click
+  const handleChevronClick = () => {
+    !/The/.test(message)
+      ? window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+      : window.scrollTo({ top: window.innerHeight - 136, behavior: 'smooth' });
+  };
 
   return (
     <LandingWrapper>
-      <h1>{message}</h1>
+      <h1>{landingMessage}</h1>
       <FloatingChevronDown
         display={chevronIsDisplayed ? 'block' : 'none'}
         size={36}
+        onClick={handleChevronClick}
       />
     </LandingWrapper>
   );
@@ -40,7 +60,6 @@ const LandingWrapper = styled.section`
   text-align: center;
 `;
 
-// TODO: remove chevron on scroll: https://dev.to/caicindy87/change-navbar-style-on-scroll-using-react-and-css-43pc
 const FloatingChevronDown = styled(ChevronDown)`
   display: ${(p) => p.display};
   position: absolute;
@@ -56,13 +75,17 @@ const FloatingChevronDown = styled(ChevronDown)`
       color: ${COLORS.eerieBlack};
     }
     50% {
-      transform: translateY(-8px);
+      transform: translateY(-16px);
       color: ${COLORS.harvestGold};
     }
     100% {
       transform: translateY(0px);
       color: ${COLORS.eerieBlack};
     }
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 
