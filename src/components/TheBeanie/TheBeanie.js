@@ -1,6 +1,5 @@
 import MaxWidthWrapper from '../App/MaxWidthWrapper';
 import Main from '../App/Main';
-import Landing from '../Landing';
 import ProductDisplay from '../product/ProductDisplay';
 
 // TODO: move to Firestore
@@ -50,7 +49,6 @@ const TheBeanie = () => {
   return (
     <MaxWidthWrapper>
       <Main>
-        <Landing message='The Beanie.' />
         <ProductDisplay
           imageCollection={beanieImageCollection}
           product='The Beanie.'
