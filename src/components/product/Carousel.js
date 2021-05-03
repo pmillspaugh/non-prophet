@@ -20,19 +20,24 @@ const Carousel = ({ imageCollection, selectedColor }) => {
     <Wrapper>
       <ImageWrapper>
         {imageCollection[selectedColor].map((source) => (
-          <ProductImage src={source} index={selectedImage} alt='' />
+          <ProductImage
+            src={source}
+            index={selectedImage}
+            alt=''
+            key={source}
+          />
         ))}
       </ImageWrapper>
       <ToggleWrapper>
         {imageCollection[selectedColor].map((source, index) => (
-          <>
+          <DotWrapper index={index} selectedImage={selectedImage} key={source}>
             <ToggleDot
               index={index}
               selectedImage={selectedImage}
               onClick={() => setSelectedImage(index)}
             />
             <Spacer size='4px' />
-          </>
+          </DotWrapper>
         ))}
       </ToggleWrapper>
       <LeftChevron size={44} onClick={handleLeftChevronClick} />
@@ -90,6 +95,13 @@ const ToggleWrapper = styled.div`
   padding: 16px 0;
 `;
 
+const DotWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${(p) => (p.selectedImage === p.index ? '16px' : '12px')};
+`;
+
 const ToggleDot = styled.div`
   width: ${(p) => (p.selectedImage === p.index ? '12px' : '8px')};
   height: ${(p) => (p.selectedImage === p.index ? '12px' : '8px')};
@@ -105,7 +117,6 @@ const ToggleDot = styled.div`
   }
 `;
 
-// TODO: change image on click, enlarge on hover
 const LeftChevron = styled(ChevronLeft)`
   position: absolute;
   top: calc(50% - 44px);

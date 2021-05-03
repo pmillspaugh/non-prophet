@@ -13,6 +13,7 @@ const ChooseSize = ({
       <h4>Size: </h4>
       {sizeChoices.map((size, index) => (
         <SizeButton
+          key={size}
           sizeOption={size}
           selectedSize={selectedSize}
           handleSizeButtonClick={handleSizeButtonClick}
