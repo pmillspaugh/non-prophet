@@ -21,7 +21,7 @@ const About = () => {
             <ExternalLink href='https://eji.org/' target='_blank'>
               Equal Justice Initiative
             </ExternalLink>
-            .
+            . The EJI is a nonprofit organization challenging racial and economic injustice in the US, with a focus on ending mass incarceration and excessive punishment.
           </BodyText>
           <Spacer size='16px' />
           <BodyText>
