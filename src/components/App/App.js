@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 import PrimaryContent from './PrimaryContent';
 import NavSideBar from './NavSideBar';
 import CartSideBar from './CartSideBar';
+import { FloatingShoppingCart } from '../Buttons';
 
 const App = () => {
   // state variables track the status and styling of mobile navigation menu sidebar and shopping cart sidebar
@@ -60,6 +61,7 @@ const App = () => {
           menuTransform={menuTransform}
           toggleMenuTransform={toggleMenuTransform}
         />
+        <FloatingShoppingCart toggleCartTransform={toggleCartTransform} />
         <CartSideBar
           cartTransform={cartTransform}
           toggleCartTransform={toggleCartTransform}
