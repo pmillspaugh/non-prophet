@@ -4,7 +4,7 @@ import ProductDisplay from '../product/ProductDisplay';
 
 // TODO: move to Firestore
 const hoodieImageCollection = {
-  navy: [
+  Navy: [
     '../../assets/theHoodie/navy/hoodie-navy-womens-1.png',
     '../../assets/theHoodie/navy/hoodie-navy-mens-1.png',
     '../../assets/theHoodie/navy/hoodie-navy-womens-2.png',
@@ -12,7 +12,7 @@ const hoodieImageCollection = {
     '../../assets/theHoodie/navy/hoodie-navy-womens-zoomed-1.png',
     '../../assets/theHoodie/navy/hoodie-navy-womens-zoomed-2.png',
   ],
-  black: [
+  Black: [
     '../../assets/theHoodie/black/hoodie-black-womens-1.png',
     '../../assets/theHoodie/black/hoodie-black-mens-1.png',
     '../../assets/theHoodie/black/hoodie-black-womens-2.png',
@@ -20,7 +20,7 @@ const hoodieImageCollection = {
     '../../assets/theHoodie/black/hoodie-black-womens-zoomed-1.png',
     '../../assets/theHoodie/black/hoodie-black-womens-zoomed-2.png',
   ],
-  white: [
+  White: [
     '../../assets/theHoodie/white/hoodie-white-womens-1.png',
     '../../assets/theHoodie/white/hoodie-white-mens-1.png',
     '../../assets/theHoodie/white/hoodie-white-womens-2.png',
@@ -31,9 +31,9 @@ const hoodieImageCollection = {
 };
 
 const hoodieColorChoices = {
-  navy: '../../../assets/theHoodie/navy/hoodie-navy-flat-1.png',
-  black: '../../../assets/theHoodie/black/hoodie-black-flat-1.png',
-  white: '../../../assets/theHoodie/white/hoodie-white-flat-1.png',
+  Navy: '../../../assets/theHoodie/navy/hoodie-navy-flat-1.png',
+  Black: '../../../assets/theHoodie/black/hoodie-black-flat-1.png',
+  White: '../../../assets/theHoodie/white/hoodie-white-flat-1.png',
 };
 
 const hoodieSizeChoices = ['S', 'M', 'L', 'XL', 'XXL'];

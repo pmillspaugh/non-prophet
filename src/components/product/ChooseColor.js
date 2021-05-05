@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import ColorButton from './ColorButton';
+import { WEIGHTS } from '../../constants';
 
 const ChooseColor = ({
   colorChoices,
@@ -8,26 +9,28 @@ const ChooseColor = ({
 }) => {
   return (
     <Wrapper>
-      <h4>Color: </h4>
+      <h4>
+        Color: <SelectedColor>{selectedColor}</SelectedColor>
+      </h4>
       <ColorButton
-        source={colorChoices.navy}
+        source={colorChoices.Navy}
         altText=''
         handleColorButtonClick={handleColorButtonClick}
-        buttonColor='navy'
+        buttonColor='Navy'
         selectedColor={selectedColor}
       />
       <ColorButton
-        source={colorChoices.black}
+        source={colorChoices.Black}
         altText=''
         handleColorButtonClick={handleColorButtonClick}
-        buttonColor='black'
+        buttonColor='Black'
         selectedColor={selectedColor}
       />
       <ColorButton
-        source={colorChoices.white}
+        source={colorChoices.White}
         altText=''
         handleColorButtonClick={handleColorButtonClick}
-        buttonColor='white'
+        buttonColor='White'
         selectedColor={selectedColor}
       />
     </Wrapper>
@@ -35,5 +38,9 @@ const ChooseColor = ({
 };
 
 const Wrapper = styled.div``;
+
+const SelectedColor = styled.span`
+  font-weight: ${WEIGHTS[400]};
+`;
 
 export default ChooseColor;

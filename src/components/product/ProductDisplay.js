@@ -17,7 +17,7 @@ const ProductDisplay = ({
   details,
 }) => {
   // state to manage color and size selection
-  const [selectedColor, setSelectedColor] = useState('navy');
+  const [selectedColor, setSelectedColor] = useState('Navy');
   const [selectedSize, setSelectedSize] = useState('');
 
   // toggles image collection for display in Carousel
@@ -28,6 +28,11 @@ const ProductDisplay = ({
   // toggles size selected
   const handleSizeButtonClick = (sizeOption) => {
     setSelectedSize(sizeOption);
+  };
+
+  const handleAddToCartClick = () => {
+    alert('hey there');
+    // localStorage
   };
 
   return (
@@ -53,7 +58,9 @@ const ProductDisplay = ({
           selectedSize={selectedSize}
         />
         <Spacer size='16px' />
-        <AddToCartButton>Add to cart.</AddToCartButton>
+        <AddToCartButton onAddToCartClick={handleAddToCartClick}>
+          Add to cart.
+        </AddToCartButton>
         <Spacer size='16px' />
         <Details details={details} />
       </OptionsWrapper>

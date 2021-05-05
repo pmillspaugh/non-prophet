@@ -4,7 +4,7 @@ import ProductDisplay from '../product/ProductDisplay';
 
 // TODO: move to Firestore
 const beanieImageCollection = {
-  navy: [
+  Navy: [
     '../../assets/theBeanie/navy/beanie-navy-flat-1.png',
     '../../assets/theBeanie/navy/beanie-navy-flat-2.png',
     '../../assets/theBeanie/navy/beanie-navy-mens-1.png',
@@ -12,7 +12,7 @@ const beanieImageCollection = {
     '../../assets/theBeanie/navy/beanie-navy-mens-2.png',
     '../../assets/theBeanie/navy/beanie-navy-womens-2.png',
   ],
-  black: [
+  Black: [
     '../../assets/theBeanie/black/beanie-black-flat-1.png',
     '../../assets/theBeanie/black/beanie-black-flat-2.png',
     '../../assets/theBeanie/black/beanie-black-mens-1.png',
@@ -20,7 +20,7 @@ const beanieImageCollection = {
     '../../assets/theBeanie/black/beanie-black-mens-2.png',
     '../../assets/theBeanie/black/beanie-black-womens-2.png',
   ],
-  white: [
+  White: [
     '../../assets/theBeanie/white/beanie-white-flat-1.png',
     '../../assets/theBeanie/white/beanie-white-flat-2.png',
     '../../assets/theBeanie/white/beanie-white-mens-1.png',
@@ -31,9 +31,9 @@ const beanieImageCollection = {
 };
 
 const beanieColorChoices = {
-  navy: '../../../assets/theBeanie/navy/beanie-navy-flat-1.png',
-  black: '../../../assets/theBeanie/black/beanie-black-flat-1.png',
-  white: '../../../assets/theBeanie/white/beanie-white-flat-1.png',
+  Navy: '../../../assets/theBeanie/navy/beanie-navy-flat-1.png',
+  Black: '../../../assets/theBeanie/black/beanie-black-flat-1.png',
+  White: '../../../assets/theBeanie/white/beanie-white-flat-1.png',
 };
 
 const beanieSizeChoices = ['N/A'];
