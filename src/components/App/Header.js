@@ -87,6 +87,10 @@ const IconWrapper = styled.div`
     margin-left: auto;
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (min-width: 768px) {
     & {
       display: none;

@@ -33,6 +33,10 @@ const XIcon = styled(X)`
   position: absolute;
   top: 12px;
   left: 12px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default CartSideBar;

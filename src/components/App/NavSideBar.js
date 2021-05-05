@@ -71,6 +71,10 @@ const XIcon = styled(X)`
   position: absolute;
   top: 12px;
   right: 12px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default NavSideBar;
