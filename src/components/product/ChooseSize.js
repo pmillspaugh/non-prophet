@@ -12,9 +12,10 @@ const ChooseSize = ({
   return (
     <Wrapper>
       <h4>
-        Size: <SelectedSize>{selectedSize}</SelectedSize>
+        Size:{' '}
+        <SelectedSize selectedSize={selectedSize}>{selectedSize}</SelectedSize>
       </h4>
-      {sizeChoices.map((size, index) => (
+      {sizeChoices.map((size) => (
         <SizeButton
           key={size}
           sizeOption={size}
@@ -30,6 +31,8 @@ const Wrapper = styled.div``;
 
 const SelectedSize = styled.span`
   font-weight: ${WEIGHTS[400]};
+  color: ${(p) =>
+    p.selectedSize === 'Select a size' ? 'hsl(0 100% 40%)' : 'inherit'};
 `;
 
 export default ChooseSize;

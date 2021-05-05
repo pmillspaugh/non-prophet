@@ -14,7 +14,7 @@ const App = () => {
   const [cartTransform, setCartTransform] = useState('translate(250px, 0)');
   const [contentFilter, setContentFilter] = useState('none');
 
-  // Toggles mobile navigation menu sidebar
+  // toggles mobile navigation menu sidebar
   const toggleMenuTransform = (menuIsOpen) => {
     if (cartIsOpen) {
       console.log('test');
@@ -31,8 +31,7 @@ const App = () => {
     }
   };
 
-  // Toggles mobile shopping cart sidebar
-  //  ! DRY
+  // toggles mobile shopping cart sidebar
   const toggleCartTransform = () => {
     if (menuIsOpen) {
       console.log('test');

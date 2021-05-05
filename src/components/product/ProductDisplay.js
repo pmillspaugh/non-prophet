@@ -8,6 +8,24 @@ import ChooseSize from '../product/ChooseSize';
 import AddToCartButton from '../product/AddToCartButton';
 import Details from '../product/Details';
 
+const emptyCart = {
+  shirt: {
+    Navy: {},
+    Black: {},
+    White: {},
+  },
+  hoodie: {
+    Navy: {},
+    Black: {},
+    White: {},
+  },
+  beanie: {
+    Navy: {},
+    Black: {},
+    White: {},
+  },
+};
+
 const ProductDisplay = ({
   imageCollection,
   colorChoices,
@@ -15,6 +33,7 @@ const ProductDisplay = ({
   product,
   price,
   details,
+  toggleCartTransform,
 }) => {
   // state to manage color and size selection
   const [selectedColor, setSelectedColor] = useState('Navy');
@@ -31,8 +50,33 @@ const ProductDisplay = ({
   };
 
   const handleAddToCartClick = () => {
-    alert('hey there');
-    // localStorage
+    // if the user has not selected a size, display message to select size
+    if (product !== 'The Beanie.' && selectedSize === '') {
+      setSelectedSize('Select a size');
+      return;
+    }
+    // if the user has not selected a size, prompt them to select a size
+    if (selectedSize === 'Select a size') return;
+
+    // access shopping cart from local storage, or create an empty cart
+    let shoppingCart;
+    if (localStorage.getItem('shoppingCart')) {
+      shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    } else {
+      shoppingCart = emptyCart;
+    }
+    const productKey = product.toLowerCase().substring(4, product.length - 1);
+    // if the user has already added the product of the selected color and size to cart, increment quantity
+    if (shoppingCart[productKey][selectedColor][selectedSize]) {
+      shoppingCart[productKey][selectedColor][selectedSize]++;
+    } else {
+      // otherwise, set value to 1
+      shoppingCart[productKey][selectedColor][selectedSize] = 1;
+    }
+    // set the shopping cart in local storage
+    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+    // open the shopping cart side bar
+    toggleCartTransform();
   };
 
   return (

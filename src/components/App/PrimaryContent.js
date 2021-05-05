@@ -27,16 +27,16 @@ const PrimaryContent = ({
           <About />
         </Route>
         <Route path='/the-shirt'>
-          <TheShirt />
+          <TheShirt toggleCartTransform={toggleCartTransform} />
         </Route>
         <Route exact path='/'>
           <Home />
         </Route>
         <Route path='/the-hoodie'>
-          <TheHoodie />
+          <TheHoodie toggleCartTransform={toggleCartTransform} />
         </Route>
         <Route path='/the-beanie'>
-          <TheBeanie />
+          <TheBeanie toggleCartTransform={toggleCartTransform} />
         </Route>
       </Switch>
       <Footer />

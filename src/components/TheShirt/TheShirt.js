@@ -44,7 +44,7 @@ const shirtDetails = {
   shipping: 'Printed & shipped upon order. Should take 1-2 weeks to arrive.',
 };
 
-const TheShirt = () => {
+const TheShirt = ({ toggleCartTransform }) => {
   return (
     <MaxWidthWrapper>
       <Main>
@@ -55,6 +55,7 @@ const TheShirt = () => {
           colorChoices={shirtColorChoices}
           sizeChoices={shirtSizeChoices}
           details={shirtDetails}
+          toggleCartTransform={toggleCartTransform}
         />
       </Main>
     </MaxWidthWrapper>
