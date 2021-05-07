@@ -1,12 +1,23 @@
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import ShoppingCartContext from '../ShoppingCartContext';
 import PrimaryContent from './PrimaryContent';
 import NavSideBar from './NavSideBar';
 import CartSideBar from './CartSideBar';
 import { FloatingShoppingCart } from '../Buttons';
 
 const App = () => {
+  // state variable to store shopping cart
+  const [shoppingCart, setShoppingCart] = useState(
+    'initial shopping cart context value'
+  );
+
+  // handler for shopping cart items added/removed
+  const handleShoppingCartChange = () => {
+    setShoppingCart(localStorage.getItem('shoppingCart'));
+  };
+
   // state variables track the status and styling of mobile navigation menu sidebar and shopping cart sidebar
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [menuTransform, setMenuTransform] = useState('translate(-250px, 0)');
@@ -17,7 +28,6 @@ const App = () => {
   // toggles mobile navigation menu sidebar
   const toggleMenuTransform = (menuIsOpen) => {
     if (cartIsOpen) {
-      console.log('test');
       return;
     }
     if (!menuIsOpen) {
@@ -50,22 +60,25 @@ const App = () => {
 
   return (
     <Router>
-      <AppWrapper>
-        <PrimaryContent
-          contentFilter={contentFilter}
-          toggleMenuTransform={toggleMenuTransform}
-          toggleCartTransform={toggleCartTransform}
-        />
-        <NavSideBar
-          menuTransform={menuTransform}
-          toggleMenuTransform={toggleMenuTransform}
-        />
-        <FloatingShoppingCart toggleCartTransform={toggleCartTransform} />
-        <CartSideBar
-          cartTransform={cartTransform}
-          toggleCartTransform={toggleCartTransform}
-        />
-      </AppWrapper>
+      <ShoppingCartContext.Provider value={shoppingCart}>
+        <AppWrapper>
+          <PrimaryContent
+            onShoppingCartChange={handleShoppingCartChange}
+            contentFilter={contentFilter}
+            toggleMenuTransform={toggleMenuTransform}
+            toggleCartTransform={toggleCartTransform}
+          />
+          <NavSideBar
+            menuTransform={menuTransform}
+            toggleMenuTransform={toggleMenuTransform}
+          />
+          <FloatingShoppingCart toggleCartTransform={toggleCartTransform} />
+          <CartSideBar
+            cartTransform={cartTransform}
+            toggleCartTransform={toggleCartTransform}
+          />
+        </AppWrapper>
+      </ShoppingCartContext.Provider>
     </Router>
   );
 };

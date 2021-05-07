@@ -44,7 +44,7 @@ const hoodieDetails = {
   shipping: 'Printed & shipped upon order. Should take 1-2 weeks to arrive.',
 };
 
-const TheHoodie = () => {
+const TheHoodie = ({ onShoppingCartChange, toggleCartTransform }) => {
   return (
     <MaxWidthWrapper>
       <Main>
@@ -55,6 +55,8 @@ const TheHoodie = () => {
           colorChoices={hoodieColorChoices}
           sizeChoices={hoodieSizeChoices}
           details={hoodieDetails}
+          onShoppingCartChange={onShoppingCartChange}
+          toggleCartTransform={toggleCartTransform}
         />
       </Main>
     </MaxWidthWrapper>

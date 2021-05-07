@@ -45,7 +45,7 @@ const beanieDetails = {
   shipping: 'Printed & shipped upon order. Should take 1-2 weeks to arrive.',
 };
 
-const TheBeanie = () => {
+const TheBeanie = ({ onShoppingCartChange, toggleCartTransform }) => {
   return (
     <MaxWidthWrapper>
       <Main>
@@ -56,6 +56,8 @@ const TheBeanie = () => {
           colorChoices={beanieColorChoices}
           sizeChoices={beanieSizeChoices}
           details={beanieDetails}
+          onShoppingCartChange={onShoppingCartChange}
+          toggleCartTransform={toggleCartTransform}
         />
       </Main>
     </MaxWidthWrapper>

@@ -11,6 +11,7 @@ import Footer from './Footer';
 import { COLORS } from '../../constants';
 
 const PrimaryContent = ({
+  onShoppingCartChange,
   toggleMenuTransform,
   toggleCartTransform,
   contentFilter,
@@ -27,16 +28,25 @@ const PrimaryContent = ({
           <About />
         </Route>
         <Route path='/the-shirt'>
-          <TheShirt toggleCartTransform={toggleCartTransform} />
+          <TheShirt
+            onShoppingCartChange={onShoppingCartChange}
+            toggleCartTransform={toggleCartTransform}
+          />
         </Route>
         <Route exact path='/'>
           <Home />
         </Route>
         <Route path='/the-hoodie'>
-          <TheHoodie toggleCartTransform={toggleCartTransform} />
+          <TheHoodie
+            onShoppingCartChange={onShoppingCartChange}
+            toggleCartTransform={toggleCartTransform}
+          />
         </Route>
         <Route path='/the-beanie'>
-          <TheBeanie toggleCartTransform={toggleCartTransform} />
+          <TheBeanie
+            onShoppingCartChange={onShoppingCartChange}
+            toggleCartTransform={toggleCartTransform}
+          />
         </Route>
       </Switch>
       <Footer />

@@ -8,24 +8,6 @@ import ChooseSize from '../product/ChooseSize';
 import AddToCartButton from '../product/AddToCartButton';
 import Details from '../product/Details';
 
-const emptyCart = {
-  shirt: {
-    Navy: {},
-    Black: {},
-    White: {},
-  },
-  hoodie: {
-    Navy: {},
-    Black: {},
-    White: {},
-  },
-  beanie: {
-    Navy: {},
-    Black: {},
-    White: {},
-  },
-};
-
 const ProductDisplay = ({
   imageCollection,
   colorChoices,
@@ -33,6 +15,7 @@ const ProductDisplay = ({
   product,
   price,
   details,
+  onShoppingCartChange,
   toggleCartTransform,
 }) => {
   // state to manage color and size selection
@@ -49,34 +32,58 @@ const ProductDisplay = ({
     setSelectedSize(sizeOption);
   };
 
-  const handleAddToCartClick = () => {
-    // if the user has not selected a size, display message to select size
-    if (product !== 'The Beanie.' && selectedSize === '') {
-      setSelectedSize('Select a size');
-      return;
-    }
-    // if the user has not selected a size, prompt them to select a size
-    if (selectedSize === 'Select a size') return;
+  const handleAddToCartMouseEnter = () => {
+    if (product !== 'The Beanie.' && selectedSize === '')
+      setSelectedSize('Select a size.');
+  };
 
+  const handleAddToCartMouseLeave = () => {
+    if (selectedSize === 'Select a size.') setSelectedSize('');
+  };
+
+  const handleAddToCartClick = () => {
+    // if the product is not The Beanie and the user has not selected a size, return
+    if (product !== 'The Beanie.' && selectedSize === 'Select a size.') return;
+
+    // TODO: also need to be able to remove items from cart –> extract local storage update to helper function in utils?
     // access shopping cart from local storage, or create an empty cart
     let shoppingCart;
     if (localStorage.getItem('shoppingCart')) {
       shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
     } else {
-      shoppingCart = emptyCart;
+      shoppingCart = {
+        'The Shirt.': {
+          Navy: {},
+          Black: {},
+          White: {},
+        },
+        'The Hoodie.': {
+          Navy: {},
+          Black: {},
+          White: {},
+        },
+        'The Beanie.': {
+          Navy: {},
+          Black: {},
+          White: {},
+        },
+      };
     }
-    const productKey = product.toLowerCase().substring(4, product.length - 1);
     // if the user has already added the product of the selected color and size to cart, increment quantity
-    if (shoppingCart[productKey][selectedColor][selectedSize]) {
-      shoppingCart[productKey][selectedColor][selectedSize]++;
+    if (shoppingCart[product][selectedColor][selectedSize]) {
+      shoppingCart[product][selectedColor][selectedSize]++;
     } else {
       // otherwise, set value to 1
-      shoppingCart[productKey][selectedColor][selectedSize] = 1;
+      shoppingCart[product][selectedColor][selectedSize] = 1;
     }
     // set the shopping cart in local storage
     localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+
     // open the shopping cart side bar
     toggleCartTransform();
+
+    // call onShoppingCartChange to update top-level shopping cart state
+    onShoppingCartChange();
   };
 
   return (
@@ -102,7 +109,12 @@ const ProductDisplay = ({
           selectedSize={selectedSize}
         />
         <Spacer size='16px' />
-        <AddToCartButton onAddToCartClick={handleAddToCartClick}>
+        <AddToCartButton
+          selectedSize={selectedSize}
+          onAddToCartMouseEnter={handleAddToCartMouseEnter}
+          onAddToCartMouseLeave={handleAddToCartMouseLeave}
+          onAddToCartClick={handleAddToCartClick}
+        >
           Add to cart.
         </AddToCartButton>
         <Spacer size='16px' />
