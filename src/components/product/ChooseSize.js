@@ -32,7 +32,7 @@ const Wrapper = styled.div``;
 const SelectedSize = styled.span`
   font-weight: ${WEIGHTS[400]};
   color: ${(p) =>
-    p.selectedSize === 'Select a size' ? 'hsl(0 100% 40%)' : 'inherit'};
+    p.selectedSize === 'Select a size.' ? 'hsl(0 100% 40%)' : 'inherit'};
 `;
 
 export default ChooseSize;
