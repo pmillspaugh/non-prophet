@@ -15,7 +15,6 @@ const ProductDisplay = ({
   product,
   price,
   details,
-  onShoppingCartChange,
   toggleCartTransform,
 }) => {
   // state to manage color and size selection
@@ -42,48 +41,8 @@ const ProductDisplay = ({
   };
 
   const handleAddToCartClick = () => {
-    // if the product is not The Beanie and the user has not selected a size, return
-    if (product !== 'The Beanie.' && selectedSize === 'Select a size.') return;
-
-    // TODO: also need to be able to remove items from cart –> extract local storage update to helper function in utils?
-    // access shopping cart from local storage, or create an empty cart
-    let shoppingCart;
-    if (localStorage.getItem('shoppingCart')) {
-      shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-    } else {
-      shoppingCart = {
-        'The Shirt.': {
-          Navy: {},
-          Black: {},
-          White: {},
-        },
-        'The Hoodie.': {
-          Navy: {},
-          Black: {},
-          White: {},
-        },
-        'The Beanie.': {
-          Navy: {},
-          Black: {},
-          White: {},
-        },
-      };
-    }
-    // if the user has already added the product of the selected color and size to cart, increment quantity
-    if (shoppingCart[product][selectedColor][selectedSize]) {
-      shoppingCart[product][selectedColor][selectedSize]++;
-    } else {
-      // otherwise, set value to 1
-      shoppingCart[product][selectedColor][selectedSize] = 1;
-    }
-    // set the shopping cart in local storage
-    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
-
     // open the shopping cart side bar
     toggleCartTransform();
-
-    // call onShoppingCartChange to update top-level shopping cart state
-    onShoppingCartChange();
   };
 
   return (
