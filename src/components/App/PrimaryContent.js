@@ -46,8 +46,8 @@ const shirtInfo = {
       '../../assets/theShirt/white/shirt-white-mens-zoomed-1.png',
       '../../assets/theShirt/white/shirt-white-womens-zoomed-1.png',
     ],
-  }
-}
+  },
+};
 // The Hoodie product info
 const hoodieInfo = {
   hoodieImageCollection: {
@@ -83,11 +83,12 @@ const hoodieInfo = {
   },
   hoodieSizeChoices: ['S', 'M', 'L', 'XL', 'XXL'],
   hoodieDetails: {
-    details: 'Embroidered non-prophet logo. 65% cotton / 35% polyester. Unisex.',
+    details:
+      'Embroidered non-prophet logo. 65% cotton / 35% polyester. Unisex.',
     sizeAndFit: 'Regular fit.',
     shipping: 'Printed & shipped upon order. Should take 1-2 weeks to arrive.',
   },
-}
+};
 // The Beanie product info
 const beanieInfo = {
   beanieImageCollection: {
@@ -128,7 +129,7 @@ const beanieInfo = {
       'One size fits all (even big noggins – just avoid machine washing/drying).',
     shipping: 'Printed & shipped upon order. Should take 1-2 weeks to arrive.',
   },
-}
+};
 
 const PrimaryContent = ({
   toggleMenuTransform,
@@ -181,6 +182,10 @@ const PrimaryContent = ({
             imageCollection={beanieInfo.beanieImageCollection}
             toggleCartTransform={toggleCartTransform}
           />
+        </Route>
+        {/* Any invalid routes should render homepage */}
+        <Route path='/'>
+          <Home />
         </Route>
       </Switch>
       <Footer />
