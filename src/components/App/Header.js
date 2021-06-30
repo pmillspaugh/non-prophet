@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 import { ShoppingCart, Menu } from 'react-feather';
 import { COLORS } from '../../constants';
 import Logo from './Logo';
+import Spacer from '../Spacer';
 
 const Header = ({ toggleMenuTransform, toggleCartTransform }) => {
   const [logoSource, setLogoSource] = useState(
@@ -28,11 +29,15 @@ const Header = ({ toggleMenuTransform, toggleCartTransform }) => {
           <Menu color={COLORS.eerieBlack} />
         </IconWrapper>
         <NavBarLink to='/about'>About</NavBarLink>
+        <Spacer size='12px' />
         <NavBarLink to='/the-shirt'>The Shirt</NavBarLink>
+        <Spacer size='12px' />
         <Link to='/'>
           <Logo source={logoSource} />
         </Link>
+        <Spacer size='12px' />
         <NavBarLink to='/the-hoodie'>The Hoodie</NavBarLink>
+        <Spacer size='12px' />
         <NavBarLink to='/the-beanie'>The Beanie</NavBarLink>
         <IconWrapper href='/' onClick={toggleCartTransform}>
           <ShoppingCart color={COLORS.eerieBlack} />
@@ -59,7 +64,6 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
 `;
 
 const NavBarLink = styled(NavLink)`
