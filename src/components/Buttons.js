@@ -19,7 +19,10 @@ const PrimaryButton = styled.button`
 
 const FloatingShoppingCart = ({ toggleCartTransform }) => {
   return (
-    <FloatingActionButtonShoppingCart onClick={toggleCartTransform}>
+    <FloatingActionButtonShoppingCart
+      aria-label='Shopping Cart'
+      onClick={toggleCartTransform}
+    >
       <ShoppingCart color={COLORS.eerieBlack} />
     </FloatingActionButtonShoppingCart>
   );
