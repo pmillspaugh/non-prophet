@@ -21,7 +21,7 @@ const FooterWrapper = styled.footer`
 
 const FooterLink = styled(NavLink)`
   text-decoration: none;
-  color: ${COLORS.harvestGold};
+  color: ${COLORS.oxfordBlue};
 `;
 
 export default Footer;

@@ -16,10 +16,10 @@ const EJILink = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: ${COLORS.harvestGold};
+  color: ${COLORS.oxfordBlue};
 
   &:hover {
-    color: ${COLORS.oxfordBlue};
+    color: ${COLORS.harvestGold};
   }
 `;
 
