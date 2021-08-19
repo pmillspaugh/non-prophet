@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import PrimaryContent from './PrimaryContent';
 import NavSideBar from './NavSideBar';
 import CartSideBar from './CartSideBar';
@@ -17,7 +17,7 @@ const App = () => {
   // toggles mobile navigation menu sidebar
   const toggleMenuTransform = (menuIsOpen) => {
     if (cartIsOpen) return;
-    
+
     if (!menuIsOpen) {
       setMenuIsOpen(true);
       setMenuTransform('translate(0, 0)');
@@ -32,7 +32,7 @@ const App = () => {
   // toggles mobile shopping cart sidebar
   const toggleCartTransform = () => {
     if (menuIsOpen) return;
-    
+
     if (!cartIsOpen) {
       setcartIsOpen(true);
       setCartTransform('translate(0, 0)');

@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import SizeButton from './SizeButton';
 import { WEIGHTS } from '../../constants';
 

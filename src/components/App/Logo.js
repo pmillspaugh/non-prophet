@@ -1,12 +1,9 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 const Logo = ({ source }) => {
   return (
     <LogoWrapper>
-      <LogoImage
-        src={source}
-        alt='yellow non-prophet logo'
-      />
+      <LogoImage src={source} alt='yellow non-prophet logo' />
     </LogoWrapper>
   );
 };

@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import ScrollToTop from './ScrollToTop';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';

@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import Spacer from '../Spacer';
 import { PrimaryButton } from '../Buttons';
 import { COLORS } from '../../constants';

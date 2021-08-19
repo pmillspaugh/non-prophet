@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { ShoppingCart, Menu } from 'react-feather';
 import { COLORS } from '../../constants';
 import Logo from './Logo';
