@@ -8,6 +8,7 @@ import ChooseSize from './ChooseSize';
 import AddToCartButton from './AddToCartButton';
 import Details from './Details';
 
+// TODO: reset selected choices (i.e. color size) and carousel index on navigation to a new page
 const ProductDisplay = ({
   title,
   price,

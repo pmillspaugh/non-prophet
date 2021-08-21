@@ -19,20 +19,16 @@ const Carousel = ({ title, imageCollection, selectedColor }) => {
 
   return (
     <Wrapper>
-      <ImageWrapper>
-        {imageCollection[selectedColor].map((source) => (
-          <ProductImage
-            src={source}
-            index={selectedImage}
-            alt={`model wearing product, ${title}`}
-            key={source}
-            fill='layout'
-          />
+      <ImageCarousel>
+        {imageCollection[selectedColor].map((source, index) => (
+          <ImageWrapper index={selectedImage} key={index}>
+            <Image src={source} alt={`model wearing product, ${title}`} />
+          </ImageWrapper>
         ))}
-      </ImageWrapper>
+      </ImageCarousel>
       <ToggleWrapper>
         {imageCollection[selectedColor].map((source, index) => (
-          <DotWrapper index={index} selectedImage={selectedImage} key={source}>
+          <DotWrapper index={index} selectedImage={selectedImage} key={index}>
             <ToggleDot
               index={index}
               selectedImage={selectedImage}
@@ -52,7 +48,7 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const ImageWrapper = styled.div`
+const ImageCarousel = styled.div`
   width: calc(100vw - 48px);
   height: calc(100vw - 48px);
   display: flex;
@@ -84,7 +80,9 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const ProductImage = styled(Image)`
+const ImageWrapper = styled.div`
+  display: block;
+  min-width: 100%;
   object-fit: contain;
   transform: translate(${(p) => `${p.index * -100}%`}, 0);
   transition: 1s transform;

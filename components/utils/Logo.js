@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Logo = ({ source }) => {
   return (
     <LogoWrapper>
-      <Image src={source} alt='yellow non-prophet logo' fill='layout' />
+      <Image src={source} alt='non-prophet logo' />
     </LogoWrapper>
   );
 };

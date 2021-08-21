@@ -5,7 +5,9 @@ import { COLORS } from '../../styles/constants';
 const ImageContainer = ({ source, product }) => {
   return (
     <Wrapper>
-      <Image src={source} alt={product} layout='fill' />
+      <ImageWrapper>
+        <Image src={source} alt={product} />
+      </ImageWrapper>
       <TextContainer>
         <h2>{product}</h2>
       </TextContainer>
@@ -13,7 +15,10 @@ const ImageContainer = ({ source, product }) => {
   );
 };
 
-// TODO: check if transition property functions using & img selector with Next Image
+const ImageWrapper = styled.div`
+  display: flex;
+`;
+
 const Wrapper = styled.div`
   position: relative;
   background-color: ${COLORS.gainsboro};

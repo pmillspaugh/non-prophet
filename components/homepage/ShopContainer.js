@@ -1,35 +1,29 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import ImageContainer from './ImageContainer';
 import Spacer from '../utils/Spacer';
+import ImageContainer from './ImageContainer';
+import navyShirt from '../../public/images/theShirt/navy/shirt-navy-flat-1.png';
+import navyHoodie from '../../public/images/theHoodie/navy/hoodie-navy-flat-1.png';
+import navyBeanie from '../../public/images/theBeanie/navy/beanie-navy-flat-1.png';
 
 const ShopContainer = () => {
   return (
     <Wrapper>
       <Link href='/the-shirt' passHref>
         <a>
-          <ImageContainer
-            source='../../../assets/theShirt/navy/shirt-navy-flat-1.png'
-            product='The Shirt.'
-          />
+          <ImageContainer source={navyShirt} product='The Shirt.' />
         </a>
       </Link>
       <Spacer size='24px' />
       <Link href='/the-hoodie' passHref>
         <a>
-          <ImageContainer
-            source='../../../assets/theHoodie/navy/hoodie-navy-flat-1.png'
-            product='The Hoodie.'
-          />
+          <ImageContainer source={navyHoodie} product='The Hoodie.' />
         </a>
       </Link>
       <Spacer size='24px' />
       <Link href='/the-beanie' passHref>
         <a>
-          <ImageContainer
-            source='../../../assets/theBeanie/navy/beanie-navy-flat-1.png'
-            product='The Beanie.'
-          />
+          <ImageContainer source={navyBeanie} product='The Beanie.' />
         </a>
       </Link>
     </Wrapper>

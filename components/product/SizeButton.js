@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from '../../constants';
+import { COLORS } from '../../styles/constants';
 
 const SizeButton = ({ sizeOption, selectedSize, handleSizeButtonClick }) => {
   return (

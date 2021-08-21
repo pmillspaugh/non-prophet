@@ -15,7 +15,9 @@ const ColorButton = ({
       buttonColor={buttonColor}
       selectedColor={selectedColor}
     >
-      <Image src={source} alt={altText} layout='fill' />
+      <ImageWrapper>
+        <Image src={source} alt={altText} />
+      </ImageWrapper>
     </Button>
   );
 };
@@ -39,6 +41,10 @@ const Button = styled.button`
   &:focus {
     outline: none;
   }
+`;
+
+const ImageWrapper = styled.div`
+  display: flex;
 `;
 
 export default ColorButton;
