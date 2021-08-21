@@ -1,34 +1,44 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import Logo from '../utils/Logo';
-import { NavLink, Link } from 'react-router-dom';
-import { X } from 'react-feather';
 import Spacer from '../utils/Spacer';
+import { X } from 'react-feather';
 import { COLORS } from '../../styles/constants';
 
 const NavSideBar = ({ menuTransform, toggleMenuTransform }) => {
   return (
     <Wrapper menuTransform={menuTransform}>
       <XIcon color={COLORS.aliceBlue} size={36} onClick={toggleMenuTransform} />
-      <Link to='/' onClick={toggleMenuTransform}>
-        <LogoWrapper>
-          <Logo source='../../../assets/logo/logo-aliceBlue.png' />
-        </LogoWrapper>
-      </Link>
+      <LogoWrapper onClick={toggleMenuTransform}>
+        <Logo source='../../../assets/logo/logo-aliceBlue.png' />
+      </LogoWrapper>
       <NavList>
-        <NavSideBarLink to='/about' onClick={toggleMenuTransform}>
-          About
+        <NavSideBarLink href='/about' passHref onClick={toggleMenuTransform}>
+          <a>About</a>
         </NavSideBarLink>
         <Spacer size='16px' />
-        <NavSideBarLink to='/the-shirt' onClick={toggleMenuTransform}>
-          The Shirt
+        <NavSideBarLink
+          href='/the-shirt'
+          passHref
+          onClick={toggleMenuTransform}
+        >
+          <a>The Shirt</a>
         </NavSideBarLink>
         <Spacer size='16px' />
-        <NavSideBarLink to='/the-hoodie' onClick={toggleMenuTransform}>
-          The Hoodie
+        <NavSideBarLink
+          href='/the-hoodie'
+          passHref
+          onClick={toggleMenuTransform}
+        >
+          <a>The Hoodie</a>
         </NavSideBarLink>
         <Spacer size='16px' />
-        <NavSideBarLink to='/the-beanie' onClick={toggleMenuTransform}>
-          The Beanie
+        <NavSideBarLink
+          href='/the-beanie'
+          passHref
+          onClick={toggleMenuTransform}
+        >
+          <a>The Beanie</a>
         </NavSideBarLink>
       </NavList>
     </Wrapper>
@@ -47,6 +57,7 @@ const Wrapper = styled.div`
   background-color: ${COLORS.eerieBlack};
 `;
 
+// TODO: update to semantic button element (and verify styling is not broken)
 const LogoWrapper = styled.div`
   margin-top: 60px;
   height: 68px;
@@ -62,7 +73,7 @@ const NavList = styled.ul`
   align-items: center;
 `;
 
-const NavSideBarLink = styled(NavLink)`
+const NavSideBarLink = styled(Link)`
   color: ${COLORS.aliceBlue};
   text-decoration: none;
 `;

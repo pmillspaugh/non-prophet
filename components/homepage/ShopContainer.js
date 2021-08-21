@@ -1,30 +1,36 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import ImageContainer from './ImageContainer';
 import Spacer from '../utils/Spacer';
 
 const ShopContainer = () => {
   return (
     <Wrapper>
-      <Link to='/the-shirt'>
-        <ImageContainer
-          source='../../../assets/theShirt/navy/shirt-navy-flat-1.png'
-          product='The Shirt.'
-        />
+      <Link href='/the-shirt' passHref>
+        <a>
+          <ImageContainer
+            source='../../../assets/theShirt/navy/shirt-navy-flat-1.png'
+            product='The Shirt.'
+          />
+        </a>
       </Link>
       <Spacer size='24px' />
-      <Link to='/the-hoodie'>
-        <ImageContainer
-          source='../../../assets/theHoodie/navy/hoodie-navy-flat-1.png'
-          product='The Hoodie.'
-        />
+      <Link href='/the-hoodie' passHref>
+        <a>
+          <ImageContainer
+            source='../../../assets/theHoodie/navy/hoodie-navy-flat-1.png'
+            product='The Hoodie.'
+          />
+        </a>
       </Link>
       <Spacer size='24px' />
-      <Link to='/the-beanie'>
-        <ImageContainer
-          source='../../../assets/theBeanie/navy/beanie-navy-flat-1.png'
-          product='The Beanie.'
-        />
+      <Link href='/the-beanie' passHref>
+        <a>
+          <ImageContainer
+            source='../../../assets/theBeanie/navy/beanie-navy-flat-1.png'
+            product='The Beanie.'
+          />
+        </a>
       </Link>
     </Wrapper>
   );

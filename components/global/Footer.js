@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 import { COLORS } from '../../styles/constants';
 
 const Footer = () => {
@@ -7,7 +7,9 @@ const Footer = () => {
     <FooterWrapper>
       <p>
         @2021&nbsp;
-        <FooterLink to='/about'>non-prophet</FooterLink>
+        <FooterLink href='/about' passHref>
+          <a>non-prophet</a>
+        </FooterLink>
       </p>
     </FooterWrapper>
   );
@@ -19,7 +21,7 @@ const FooterWrapper = styled.footer`
   align-items: center;
 `;
 
-const FooterLink = styled(NavLink)`
+const FooterLink = styled(Link)`
   text-decoration: none;
   color: ${COLORS.oxfordBlue};
 `;
