@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, WEIGHTS } from '../constants';
+import { COLORS, WEIGHTS } from '../../styles/constants';
 import { ShoppingCart } from 'react-feather';
 
 const PrimaryButton = styled.button`

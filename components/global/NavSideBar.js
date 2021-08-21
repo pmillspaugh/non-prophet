@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import Logo from './Logo';
+import Logo from '../utils/Logo';
 import { NavLink, Link } from 'react-router-dom';
 import { X } from 'react-feather';
-import Spacer from '../Spacer';
-import { COLORS } from '../../constants';
+import Spacer from '../utils/Spacer';
+import { COLORS } from '../../styles/constants';
 
 const NavSideBar = ({ menuTransform, toggleMenuTransform }) => {
   return (

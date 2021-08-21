@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ShoppingCart, Menu } from 'react-feather';
-import { COLORS } from '../../constants';
-import Logo from './Logo';
-import Spacer from '../Spacer';
+import { COLORS } from '../../styles/constants';
+import Logo from '../utils/Logo';
+import Spacer from '../utils/Spacer';
 
 const Header = ({ toggleMenuTransform, toggleCartTransform }) => {
   const [logoSource, setLogoSource] = useState(

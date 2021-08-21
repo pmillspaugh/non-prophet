@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ChevronDown } from 'react-feather';
-import { COLORS } from '../constants';
+import { COLORS } from '../../styles/constants';
 
 const Landing = ({ message }) => {
   const [chevronIsDisplayed, setChevronIsDisplayed] = useState(

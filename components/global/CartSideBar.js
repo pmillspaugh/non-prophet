@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { X } from 'react-feather';
-import { COLORS } from '../../constants';
+import { COLORS } from '../../styles/constants';
 
-// ! when cart side bar is visible, rest of content should be disabled (i.e. buttons not clickable, no hover states, etc.)
+// TODO: when cart side bar is visible, rest of content should be disabled (i.e. buttons not clickable, no hover states, etc.)
 // TODO: dynamically render cart (currently dummy cart)
 const CartSideBar = ({ cartTransform, toggleCartTransform }) => {
   return (
