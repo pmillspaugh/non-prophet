@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import SizeButton from './SizeButton';
-import { WEIGHTS } from '../../constants';
+import { WEIGHTS } from '../../styles/constants';
 
 const ChooseSize = ({
-  product,
+  title,
   sizeChoices,
   selectedSize,
   handleSizeButtonClick,
 }) => {
-  if (product === 'The Beanie.') return <></>;
+  if (title === 'The Beanie.') return <></>;
   return (
     <Wrapper>
       <h4>

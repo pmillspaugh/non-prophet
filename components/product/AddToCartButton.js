@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { PrimaryButton } from '../Buttons';
-import { COLORS } from '../../constants';
+import { PrimaryButton } from '../utils/Buttons';
+import { COLORS } from '../../styles/constants';
 
 const AddToCartButton = ({
   selectedSize,

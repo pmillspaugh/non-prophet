@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Spacer from '../Spacer';
-import Carousel from '../product/Carousel';
-import Description from '../product/Description';
-import ChooseColor from '../product/ChooseColor';
-import ChooseSize from '../product/ChooseSize';
-import AddToCartButton from '../product/AddToCartButton';
-import Details from '../product/Details';
+import Spacer from '../utils/Spacer';
+import Carousel from './Carousel';
+import Description from './Description';
+import ChooseColor from './ChooseColor';
+import ChooseSize from './ChooseSize';
+import AddToCartButton from './AddToCartButton';
+import Details from './Details';
 
 const ProductDisplay = ({
-  imageCollection,
-  colorChoices,
-  sizeChoices,
-  product,
+  title,
   price,
   details,
+  colorChoices,
+  sizeChoices,
+  imageCollection,
   toggleCartTransform,
 }) => {
   // state to manage color and size selection
@@ -32,7 +32,7 @@ const ProductDisplay = ({
   };
 
   const handleAddToCartMouseEnter = () => {
-    if (product !== 'The Beanie.' && selectedSize === '')
+    if (title !== 'The Beanie.' && selectedSize === '')
       setSelectedSize('Select a size.');
   };
 
@@ -53,7 +53,7 @@ const ProductDisplay = ({
       />
       <Spacer size='16px' />
       <OptionsWrapper>
-        <Description product={product} price={price} />
+        <Description title={title} price={price} />
         <Spacer size='16px' />
         <ChooseColor
           colorChoices={colorChoices}
@@ -62,7 +62,7 @@ const ProductDisplay = ({
         />
         <Spacer size='16px' />
         <ChooseSize
-          product={product}
+          title={title}
           sizeChoices={sizeChoices}
           handleSizeButtonClick={handleSizeButtonClick}
           selectedSize={selectedSize}

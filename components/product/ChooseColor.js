@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ColorButton from './ColorButton';
-import { WEIGHTS } from '../../constants';
+import { WEIGHTS } from '../../styles/constants';
 
 const ChooseColor = ({
   colorChoices,

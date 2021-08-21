@@ -1,7 +1,7 @@
-const Description = ({ product, price }) => {
+const Description = ({ title, price }) => {
   return (
     <div>
-      <h2>{product}</h2>
+      <h2>{title}</h2>
       <p>{price}</p>
     </div>
   );

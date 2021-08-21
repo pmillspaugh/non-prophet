@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Spacer from '../Spacer';
+import Spacer from '../utils/Spacer';
 import { ChevronLeft, ChevronRight } from 'react-feather';
-import { COLORS } from '../../constants';
+import { COLORS } from '../../styles/constants';
 
 const Carousel = ({ imageCollection, selectedColor }) => {
   const [selectedImage, setSelectedImage] = useState(0);
