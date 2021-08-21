@@ -48,6 +48,7 @@ const ProductDisplay = ({
   return (
     <ProductDisplayWrapper>
       <Carousel
+        title={title}
         imageCollection={imageCollection}
         selectedColor={selectedColor}
       />

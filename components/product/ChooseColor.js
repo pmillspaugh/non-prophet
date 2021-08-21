@@ -14,21 +14,21 @@ const ChooseColor = ({
       </h4>
       <ColorButton
         source={colorChoices.Navy}
-        altText=''
+        altText='Navy color choice product image'
         handleColorButtonClick={handleColorButtonClick}
         buttonColor='Navy'
         selectedColor={selectedColor}
       />
       <ColorButton
         source={colorChoices.Black}
-        altText=''
+        altText='Black color choice product image'
         handleColorButtonClick={handleColorButtonClick}
         buttonColor='Black'
         selectedColor={selectedColor}
       />
       <ColorButton
         source={colorChoices.White}
-        altText=''
+        altText='White color choice product image'
         handleColorButtonClick={handleColorButtonClick}
         buttonColor='White'
         selectedColor={selectedColor}

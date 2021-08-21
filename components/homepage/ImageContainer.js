@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 import { COLORS } from '../../styles/constants';
 
 const ImageContainer = ({ source, product }) => {
   return (
     <Wrapper>
-      <img src={source} alt={product} />
+      <Image src={source} alt={product} layout='fill' />
       <TextContainer>
         <h2>{product}</h2>
       </TextContainer>
@@ -12,6 +13,7 @@ const ImageContainer = ({ source, product }) => {
   );
 };
 
+// TODO: check if transition property functions using & img selector with Next Image
 const Wrapper = styled.div`
   position: relative;
   background-color: ${COLORS.gainsboro};

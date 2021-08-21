@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
 const Logo = ({ source }) => {
   return (
     <LogoWrapper>
-      <LogoImage src={source} alt='yellow non-prophet logo' />
+      <Image src={source} alt='yellow non-prophet logo' fill='layout' />
     </LogoWrapper>
   );
 };
@@ -20,7 +21,5 @@ const LogoWrapper = styled.div`
     }
   }
 `;
-
-const LogoImage = styled.img``;
 
 export default Logo;

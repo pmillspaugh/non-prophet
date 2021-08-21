@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { COLORS } from '../../constants';
+import Image from 'next/image';
+import { COLORS } from '../../styles/constants';
 
 const ColorButton = ({
   source,
@@ -14,7 +15,7 @@ const ColorButton = ({
       buttonColor={buttonColor}
       selectedColor={selectedColor}
     >
-      <img src={source} alt={altText} />
+      <Image src={source} alt={altText} layout='fill' />
     </Button>
   );
 };

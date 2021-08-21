@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
 import Spacer from '../utils/Spacer';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 import { COLORS } from '../../styles/constants';
 
-const Carousel = ({ imageCollection, selectedColor }) => {
+const Carousel = ({ title, imageCollection, selectedColor }) => {
   const [selectedImage, setSelectedImage] = useState(0);
 
   const handleLeftChevronClick = () => {
@@ -23,8 +24,9 @@ const Carousel = ({ imageCollection, selectedColor }) => {
           <ProductImage
             src={source}
             index={selectedImage}
-            alt=''
+            alt={`model wearing product, ${title}`}
             key={source}
+            fill='layout'
           />
         ))}
       </ImageWrapper>
@@ -82,7 +84,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const ProductImage = styled.img`
+const ProductImage = styled(Image)`
   object-fit: contain;
   transform: translate(${(p) => `${p.index * -100}%`}, 0);
   transition: 1s transform;
