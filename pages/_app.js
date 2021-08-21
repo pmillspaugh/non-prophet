@@ -2,11 +2,11 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { CSSReset, GlobalStyles } from '../styles/globals';
 import { COLORS } from '../styles/constants';
-import Header from '..components/global/Header';
-import Footer from '..components/global/Footer';
-import NavSideBar from '..components/global/NavSideBar';
-import CartSideBar from '..components/global/CartSideBar';
-import { FloatingShoppingCart } from '..components/utils/Buttons';
+import Header from '../components/global/Header';
+import Footer from '../components/global/Footer';
+import NavSideBar from '../components/global/NavSideBar';
+import CartSideBar from '../components/global/CartSideBar';
+import { FloatingShoppingCart } from '../components/utils/Buttons';
 
 const App = ({ Component, pageProps }) => {
   // state variables track the status and styling of mobile navigation menu sidebar and shopping cart sidebar
@@ -52,6 +52,14 @@ const App = ({ Component, pageProps }) => {
       <CSSReset />
       <GlobalStyles />
       <AppWrapper>
+        <PageWrapper contentFilter={contentFilter}>
+          <Header
+            toggleMenuTransform={() => toggleMenuTransform()}
+            toggleCartTransform={() => toggleCartTransform()}
+          />
+          <Component toggleCartTransform={toggleCartTransform} {...pageProps} />
+          <Footer />
+        </PageWrapper>
         <NavSideBar
           menuTransform={menuTransform}
           toggleMenuTransform={toggleMenuTransform}
@@ -61,14 +69,6 @@ const App = ({ Component, pageProps }) => {
           toggleCartTransform={toggleCartTransform}
         />
         <FloatingShoppingCart toggleCartTransform={toggleCartTransform} />
-        <PageWrapper contentFilter={contentFilter}>
-          <Header
-            toggleMenuTransform={() => toggleMenuTransform()}
-            toggleCartTransform={() => toggleCartTransform()}
-          />
-          <Component toggleCartTransform={toggleCartTransform} {...pageProps} />
-          <Footer />
-        </PageWrapper>
       </AppWrapper>
     </>
   );
