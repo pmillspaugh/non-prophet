@@ -4,9 +4,8 @@ import { ChevronDown } from 'react-feather';
 import { COLORS } from '../../styles/constants';
 
 const Landing = ({ message }) => {
-  const [chevronIsDisplayed, setChevronIsDisplayed] = useState(
-    window.scrollY === 0
-  );
+  const [chevronIsDisplayed, setChevronIsDisplayed] = useState(null);
+  const [chevronIsClicked, setChevronIsClicked] = useState(false);
   const [landingMessage, setLandingMessage] = useState('');
 
   // display message one character at a time to create typing effect
@@ -18,13 +17,13 @@ const Landing = ({ message }) => {
     );
   });
 
-  // listen for scroll event
+  // listen for scroll event, hide chevron on scroll
   useEffect(() => {
+    setChevronIsDisplayed(window.scrollY === 0);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // hide chevron on scroll
   const handleScroll = () => {
     window.scrollY > 36
       ? setChevronIsDisplayed(false)
@@ -32,10 +31,19 @@ const Landing = ({ message }) => {
   };
 
   // scroll down one page on chevron click
+  useEffect(() => {
+    if (chevronIsClicked) {
+      !/The/.test(message)
+        ? window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+        : window.scrollTo({
+            top: window.innerHeight - 136,
+            behavior: 'smooth',
+          });
+    }
+  }, [chevronIsClicked, message]);
+
   const handleChevronClick = () => {
-    !/The/.test(message)
-      ? window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
-      : window.scrollTo({ top: window.innerHeight - 136, behavior: 'smooth' });
+    setChevronIsClicked(true);
   };
 
   return (
