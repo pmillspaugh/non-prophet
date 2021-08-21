@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import MaxWidthWrapper from '../components/layout/MaxWidthWrapper';
 import Landing from '../components/utils/Landing';
 import Section from '../components/homepage/Section';
