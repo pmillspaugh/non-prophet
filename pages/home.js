@@ -1,10 +1,9 @@
-import MaxWidthWrapper from '../App/MaxWidthWrapper';
-import Main from '../App/Main';
-import Landing from '../Landing';
-import Section from '../Section';
-import EJIAnchor from './EJIAnchor';
-import ShopContainer from './ShopContainer';
-import SignUp from './SignUp';
+import MaxWidthWrapper from '../components/layout/MaxWidthWrapper';
+import Landing from '../components/utils/Landing';
+import Section from '../components/homepage/Section';
+import EJIAnchor from '../components/homepage/EJIAnchor';
+import ShopContainer from '../components/homepage/ShopContainer';
+import SignUp from '../components/homepage/SignUp';
 
 const Home = () => {
   return (
@@ -24,5 +23,9 @@ const Home = () => {
     </MaxWidthWrapper>
   );
 };
+
+const Main = styled.main`
+  width: 100%;
+`;
 
 export default Home;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import ImageContainer from './ImageContainer';
-import Spacer from '../Spacer';
+import Spacer from '../utils/Spacer';
 
 const ShopContainer = () => {
   return (

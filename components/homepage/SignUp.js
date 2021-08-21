@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Spacer from '../Spacer';
-import { PrimaryButton } from '../Buttons';
-import { COLORS } from '../../constants';
+import Spacer from '../utils/Spacer';
+import { PrimaryButton } from '../utils/Buttons';
+import { COLORS } from '../../styles/constants';
 
 const SignUp = () => {
   return (

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from '../../constants';
+import { COLORS } from '../../styles/constants';
 import { ArrowRightCircle } from 'react-feather';
 
 const EJIAnchor = () => {
