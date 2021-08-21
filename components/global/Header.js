@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { ShoppingCart, Menu } from 'react-feather';
 import { COLORS } from '../../styles/constants';
@@ -7,16 +7,19 @@ import Logo from '../utils/Logo';
 import Spacer from '../utils/Spacer';
 
 const Header = ({ toggleMenuTransform, toggleCartTransform }) => {
+  // state variable to hold the current logo color, which changes on page scroll
   const [logoSource, setLogoSource] = useState(
     '../../../assets/logo/logo-harvestGold.png'
   );
 
+  // update logo color (i.e. source) when a user scrolls
   const handleScroll = () => {
     window.scrollY > 68
       ? setLogoSource('../../../assets/logo/logo-eerieBlack.png')
       : setLogoSource('../../../assets/logo/logo-harvestGold.png');
   };
 
+  // add listener for a user scroll event when the header component re-renders
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -25,21 +28,31 @@ const Header = ({ toggleMenuTransform, toggleCartTransform }) => {
   return (
     <HeaderWrapper>
       <NavBar>
-        <IconWrapper href='/' onClick={toggleMenuTransform}>
+        <IconWrapper onClick={toggleMenuTransform}>
           <Menu color={COLORS.eerieBlack} />
         </IconWrapper>
-        <NavBarLink to='/about'>About</NavBarLink>
+        <NavBarLink href='/about' passHref>
+          <a>About</a>
+        </NavBarLink>
         <Spacer size='12px' />
-        <NavBarLink to='/the-shirt'>The Shirt</NavBarLink>
+        <NavBarLink href='/the-shirt' passHref>
+          <a>The Shirt</a>
+        </NavBarLink>
         <Spacer size='12px' />
-        <Link to='/'>
-          <Logo source={logoSource} />
+        <Link href='/'>
+          <a>
+            <Logo source={logoSource} />
+          </a>
         </Link>
         <Spacer size='12px' />
-        <NavBarLink to='/the-hoodie'>The Hoodie</NavBarLink>
+        <NavBarLink href='/the-hoodie' passHref>
+          <a>The Hoodie</a>
+        </NavBarLink>
         <Spacer size='12px' />
-        <NavBarLink to='/the-beanie'>The Beanie</NavBarLink>
-        <IconWrapper href='/' onClick={toggleCartTransform}>
+        <NavBarLink href='/the-beanie' passHref>
+          <a>The Beanie</a>
+        </NavBarLink>
+        <IconWrapper onClick={toggleCartTransform}>
           <ShoppingCart color={COLORS.eerieBlack} />
         </IconWrapper>
       </NavBar>
@@ -66,7 +79,7 @@ const NavBar = styled.nav`
   align-items: center;
 `;
 
-const NavBarLink = styled(NavLink)`
+const NavBarLink = styled(Link)`
   width: 100px;
   text-align: center;
   display: none;
@@ -80,6 +93,7 @@ const NavBarLink = styled(NavLink)`
   }
 `;
 
+// TODO: update to semantic button element (and verify styling is not broken)
 const IconWrapper = styled.div`
   display: flex;
 
