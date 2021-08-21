@@ -26,8 +26,8 @@ const About = () => {
           </BodyText>
           <Spacer size='16px' />
           <BodyText>
-            The site is a work in progress right now, so you won't be able to
-            add items to your cart, sign up, or checkout just yet.
+            The site is a work in progress right now, so you won&apos;t be able
+            to add items to your cart, sign up, or checkout just yet.
           </BodyText>
           <Spacer size='16px' />
           <BodyText>
