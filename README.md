@@ -1,6 +1,6 @@
 # non-prophet
 
-![non-prophet logo](./public/assets/logo/logo-harvestGold.png)
+![non-prophet logo](./public/images/logo/logo-harvestGold.png)
 
 [non-prophet.dev](https://non-prophet.dev/)
 
