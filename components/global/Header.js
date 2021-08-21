@@ -3,20 +3,18 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { ShoppingCart, Menu } from 'react-feather';
 import { COLORS } from '../../styles/constants';
-import Logo from '../utils/Logo';
 import Spacer from '../utils/Spacer';
+import Logo from '../utils/Logo';
+import yellowLogo from '../../public/images/logo/logo-harvestGold.png';
+import blackLogo from '../../public/images/logo/logo-eerieBlack.png';
 
 const Header = ({ toggleMenuTransform, toggleCartTransform }) => {
   // state variable to hold the current logo color, which changes on page scroll
-  const [logoSource, setLogoSource] = useState(
-    '../../../assets/logo/logo-harvestGold.png'
-  );
+  const [logo, setLogo] = useState(yellowLogo);
 
   // update logo color (i.e. source) when a user scrolls
   const handleScroll = () => {
-    window.scrollY > 68
-      ? setLogoSource('../../../assets/logo/logo-eerieBlack.png')
-      : setLogoSource('../../../assets/logo/logo-harvestGold.png');
+    window.scrollY > 68 ? setLogo(blackLogo) : setLogo(yellowLogo);
   };
 
   // add listener for a user scroll event when the header component re-renders
@@ -31,27 +29,27 @@ const Header = ({ toggleMenuTransform, toggleCartTransform }) => {
         <IconWrapper onClick={toggleMenuTransform}>
           <Menu color={COLORS.eerieBlack} />
         </IconWrapper>
-        <NavBarLink href='/about' passHref>
-          <a>About</a>
-        </NavBarLink>
+        <Link href='/about' passHref>
+          <NavBarLink>About</NavBarLink>
+        </Link>
         <Spacer size='12px' />
-        <NavBarLink href='/the-shirt' passHref>
-          <a>The Shirt</a>
-        </NavBarLink>
+        <Link href='/the-shirt' passHref>
+          <NavBarLink>The Shirt</NavBarLink>
+        </Link>
         <Spacer size='12px' />
-        <Link href='/'>
+        <Link href='/' passHref>
           <a>
-            <Logo source={logoSource} />
+            <Logo source={logo} />
           </a>
         </Link>
         <Spacer size='12px' />
-        <NavBarLink href='/the-hoodie' passHref>
-          <a>The Hoodie</a>
-        </NavBarLink>
+        <Link href='/the-hoodie' passHref>
+          <NavBarLink>The Hoodie</NavBarLink>
+        </Link>
         <Spacer size='12px' />
-        <NavBarLink href='/the-beanie' passHref>
-          <a>The Beanie</a>
-        </NavBarLink>
+        <Link href='/the-beanie' passHref>
+          <NavBarLink>The Beanie</NavBarLink>
+        </Link>
         <IconWrapper onClick={toggleCartTransform}>
           <ShoppingCart color={COLORS.eerieBlack} />
         </IconWrapper>
@@ -79,7 +77,7 @@ const NavBar = styled.nav`
   align-items: center;
 `;
 
-const NavBarLink = styled(Link)`
+const NavBarLink = styled.a`
   width: 100px;
   text-align: center;
   display: none;

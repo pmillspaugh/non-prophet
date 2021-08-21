@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import Logo from '../utils/Logo';
 import Spacer from '../utils/Spacer';
+import Logo from '../utils/Logo';
+import whiteLogo from '../../public/images/logo/logo-aliceBlue.png';
 import { X } from 'react-feather';
 import { COLORS } from '../../styles/constants';
 
@@ -10,36 +11,30 @@ const NavSideBar = ({ menuTransform, toggleMenuTransform }) => {
     <Wrapper menuTransform={menuTransform}>
       <XIcon color={COLORS.aliceBlue} size={36} onClick={toggleMenuTransform} />
       <LogoWrapper onClick={toggleMenuTransform}>
-        <Logo source='../../../assets/logo/logo-aliceBlue.png' />
+        <Logo source={whiteLogo} />
       </LogoWrapper>
       <NavList>
-        <NavSideBarLink href='/about' passHref onClick={toggleMenuTransform}>
-          <a>About</a>
-        </NavSideBarLink>
+        <Link href='/about' passHref>
+          <NavSideBarLink onClick={toggleMenuTransform}>About</NavSideBarLink>
+        </Link>
         <Spacer size='16px' />
-        <NavSideBarLink
-          href='/the-shirt'
-          passHref
-          onClick={toggleMenuTransform}
-        >
-          <a>The Shirt</a>
-        </NavSideBarLink>
+        <Link href='/the-shirt' passHref>
+          <NavSideBarLink onClick={toggleMenuTransform}>
+            The Shirt
+          </NavSideBarLink>
+        </Link>
         <Spacer size='16px' />
-        <NavSideBarLink
-          href='/the-hoodie'
-          passHref
-          onClick={toggleMenuTransform}
-        >
-          <a>The Hoodie</a>
-        </NavSideBarLink>
+        <Link href='/the-hoodie' passHref>
+          <NavSideBarLink onClick={toggleMenuTransform}>
+            The Hoodie
+          </NavSideBarLink>
+        </Link>
         <Spacer size='16px' />
-        <NavSideBarLink
-          href='/the-beanie'
-          passHref
-          onClick={toggleMenuTransform}
-        >
-          <a>The Beanie</a>
-        </NavSideBarLink>
+        <Link href='/the-beanie' passHref>
+          <NavSideBarLink onClick={toggleMenuTransform}>
+            The Beanie
+          </NavSideBarLink>
+        </Link>
       </NavList>
     </Wrapper>
   );
@@ -73,7 +68,7 @@ const NavList = styled.ul`
   align-items: center;
 `;
 
-const NavSideBarLink = styled(Link)`
+const NavSideBarLink = styled.a`
   color: ${COLORS.aliceBlue};
   text-decoration: none;
 `;
