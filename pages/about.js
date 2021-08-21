@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import MaxWidthWrapper from '../App/MaxWidthWrapper';
-import Main from '../App/Main';
-import Landing from '../Landing';
-import Spacer from '../Spacer';
-import { COLORS, WEIGHTS } from '../../constants';
+import MaxWidthWrapper from '../components/layout/MaxWidthWrapper';
+import Landing from '../components/utils/Landing';
+import Spacer from '../components/utils/Spacer';
+import { COLORS, WEIGHTS } from '../styles/constants';
 
 const About = () => {
   return (
@@ -46,6 +45,10 @@ const About = () => {
     </MaxWidthWrapper>
   );
 };
+
+const Main = styled.main`
+  width: 100%;
+`;
 
 const AboutSection = styled.section`
   height: calc(100vh - 136px);
